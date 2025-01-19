@@ -21,7 +21,7 @@ export default function Header({ }: Props) {
                 {
                     siteConfig.navItems.map((el, index) => {
                         return (<li key={index}>
-                            <Link className={path == el.href ? " text-secondary-text transition-colors" : ""} href={el.href}>{el.label}</Link>
+                            <Link className={path == el.href ? " text-secondary-text transition-colors" : " hover:text-secondary-text"} href={el.href}>{el.label}</Link>
                         </li>)
                     })
                 }
