@@ -153,7 +153,7 @@ export default function Home() {
       {/* free estimate section */}
       <div className="py-40 relative">
         <div className="w-4/5 m-auto p-16 bg-primary-sea text-white text-center rounded-xl flex flex-col gap-2 justify-center items-center shadow-2xl">
-          <h1>בין אם מדוב בתיקון צנרת, כרסום שורשים, פתיחת סתימות קשות או כל שירות אחר</h1>
+          <h1>בין אם מדובר בתיקון צנרת, כרסום שורשים, פתיחת סתימות קשות או כל שירות אחר</h1>
           <p>אנו מספקים הצעות מחיר ללא עלות על כלל העבודות הדרושות</p>
           <Link href={"/estimate"} className={filledButton + " mt-6"} >לקבלת הצעת מחיר</Link>
         </div>
@@ -167,7 +167,7 @@ export default function Home() {
         <div className=" flex flex-row justify-center container">
           <div className="w-1/2 flex flex-col justify-end items-end p-20 gap-6 text-right">
             <p className="font-medium text-primary-sea">המטרה שלנו</p>
-            <h1 className="text-right">המטרה שלנו היא לספק שירות, אמין, איכותי וזמין</h1>
+            <h1 className="text-right">המטרה שלנו היא לספק שירות אמין, איכותי וזמין</h1>
             <p>אנו נטפל לכם בכל תקלה בטווח זמנים נוח, אם איכות ללא פשרות ואחריות לכלל העבודות</p>
             <Link href={"/services"} className={filledButton} >עוד פרטים</Link>
           </div>

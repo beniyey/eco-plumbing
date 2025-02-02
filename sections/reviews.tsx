@@ -2,13 +2,15 @@
 import React, { useState } from 'react'
 import reviews from "@/data/reviews.json"
 import { outlinedButton } from '@/components/buttons'
+import Image from 'next/image'
+import avatar from "../images/avatar-portrait-svgrepo-com.svg"
 
 type Props = {}
 
 export default function Reviews({ }: Props) {
     const [review, setReview] = useState(reviews[0])
 
-    function nextReview(){
+    function nextReview() {
         setReview(reviews[1])
     }
 
@@ -31,8 +33,13 @@ export default function Reviews({ }: Props) {
                     </span>
                 </span>
             </div>
-            <div className='relative w-1/2'>
-
+            <div className='relative w-1/2 flex justify-center items-center'>
+                <Image
+                    src={avatar}
+                    alt='an image of an avatar'
+                    width={400}
+                    height={400}
+                />
             </div>
         </div>
     )
