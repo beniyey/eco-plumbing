@@ -11,9 +11,6 @@
   filter: invert(8%) sepia(0%) saturate(25%) hue-rotate(151deg) brightness(0%) contrast(100%);
 }
 
-h1 {
-  font-size: 56px;
-}
 
 .container {
   margin: auto;
@@ -22,7 +19,7 @@ h1 {
 
 .circle {
   animation: circle infinite;
-  /* animation-duration: 4s; */
+  animation-duration: 4s;
 }
 
 .image-shadow{

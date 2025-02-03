@@ -15,11 +15,11 @@ export default function Reviews({ }: Props) {
     }
 
     return (
-        <div className='container py-32 flex flex-row'>
-            <div className='w-1/2 flex flex-col justify-center items-end gap-6 text-right transition-all'>
+        <div className='container py-24 lg:py-32 flex flex-row flex-wrap'>
+            <div className='lg:w-1/2 flex flex-col justify-center items-end gap-6 text-right transition-all p-10'>
                 <p className='text-primary-sea'>{review.name}</p>
                 <p className='text-xl font-bold'>"{review.review}"</p>
-                <span className='flex flex-row gap-2 justify-between items-center w-2/3'>
+                <span className='flex flex-row gap-2 justify-between items-center lg:w-2/3'>
                     <button onClick={nextReview} className={outlinedButton}>
                         הבא
                     </button>
@@ -33,7 +33,7 @@ export default function Reviews({ }: Props) {
                     </span>
                 </span>
             </div>
-            <div className='relative w-1/2 flex justify-center items-center'>
+            <div className='relative lg:w-1/2 flex justify-center items-center'>
                 <Image
                     src={avatar}
                     alt='an image of an avatar'
