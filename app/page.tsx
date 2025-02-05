@@ -29,11 +29,11 @@ export default function Home() {
           <div className="absolute w-full h-5/6 bg-primary-sea block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 -z-10 rounded-full" />
           <span className=" absolute border-4 border-secondary-text w-40 h-40 block rounded-full top-0 lg:top-10 right-0 -z-10 lg:duration-300 circle" />
           <span className=" absolute border-4 border-secondary-text w-20 h-20 block rounded-full top-56 lg:top-64 left-0 -z-10 lg:duration1 circle" />
-          <span className=" absolute border-4 border-white w-40 h-40 block rounded-full top-56 lg:top-96 right-0 -z-50 lg:duration1 circle" />
+          <span className=" absolute border-4 border-white w-40 h-40 block rounded-full top-56 md:top-96 right-0 -z-50 lg:duration1 circle" />
 
         </div>
         {/* content */}
-        <div className="flex flex-col w-full lg:w-1/2 gap-8 text-center lg:text-right">
+        <div className="flex flex-col w-full lg:w-1/2 gap-8 text-center lg:text-right ">
           <h1 className="font-bold text-4xl lg:text-6xl">
             אנו מספקים שירותי אינסטלציה מתקדמים
           </h1>
@@ -63,6 +63,9 @@ export default function Home() {
 
       {/* About us section */}
       <div className="w-full bg-white flex flex-col gap-24 py-14 relative">
+        <span className=" absolute -left-2/3 top-28 w-96 h-96 md:-left-1/3 md:top-96 md:w-1/2 md:h-96 border-gray-400 border-[40px] rounded-full" />
+        <span className=" z-0 absolute -right-1/3 top-1/4 w-52 md:-right-20 md:top-1/4 h-52 border-secondary-text border-[10px] rounded-full" />
+
         <div className="container flex flex-col lg:flex-row relative">
           <div className="relative lg:w-1/2 p-6 lg:p-20">
             <Image
@@ -91,7 +94,7 @@ export default function Home() {
 
         {/* services section */}
         <div className="flex flex-col gap-20">
-          <span className="w-fit m-auto flex flex-col items-center justify-center">
+          <span className="z-10 w-fit m-auto flex flex-col items-center justify-center">
             <p className="font-medium text-primary-sea" >השירותים שלנו</p>
             <h2 className="text-black text-center text-4xl font-bold mt-4">במה נוכל לעזור לך היום</h2>
           </span>
