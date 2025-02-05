@@ -78,7 +78,7 @@ export default function Home() {
               width={200}
             />
           </div>
-          <div className="flex flex-col text-right p-20 items-end lg:w-1/2 gap-6">
+          <div className="flex flex-col text-right p-6 lg:p-20 items-center lg:items-end lg:w-1/2 gap-6">
             <p className="font-medium text-primary-sea" >על החברה שלנו</p>
             <h2 className="text-black text-4xl font-bold">עמידה בזמנים ומקצעיות מעל הכל</h2>
             <p>אנחנו , צוות מומחים באינסטלציה עם ניסיון של שנים וידע מעמיק בטיפול בכל בעיות הצנרת. אנו מתמחים באיתור נזילות, פתיחת סתימות, והתקנות מתקדמות, תוך שימוש בטכנולוגיות החדשניות ביותר.
@@ -93,13 +93,13 @@ export default function Home() {
         <div className="flex flex-col gap-20">
           <span className="w-fit m-auto flex flex-col items-center justify-center">
             <p className="font-medium text-primary-sea" >השירותים שלנו</p>
-            <h2 className="text-black text-4xl font-bold mt-4">במה נוכל לעזור לך היום</h2>
+            <h2 className="text-black text-center text-4xl font-bold mt-4">במה נוכל לעזור לך היום</h2>
           </span>
 
 
           {/* services */}
           <div className=" flex flex-row flex-wrap gap-y-48 justify-center gap-12 mb-24">
-            <div className="relative min-w-96 p-4">
+            <div className="relative min-w-80 p-4">
               <Image
                 src={pipe}
                 alt="an image of a pipe"
@@ -114,7 +114,7 @@ export default function Home() {
                 <Link className={underlineButton} href={"/services/leak-repair"}>לעמוד השירות</Link>
               </span>
             </div>
-            <div className="relative min-w-96 p-4">
+            <div className="relative min-w-80 p-4">
               <Image
                 src={workingPlumber}
                 alt="an image of a plumber in his work"
@@ -130,7 +130,7 @@ export default function Home() {
               </span>
 
             </div>
-            <div className="relative min-w-96 p-4">
+            <div className="relative min-w-80 p-4">
               <Image
                 src={sink}
                 alt="an image of a sink"
@@ -167,10 +167,10 @@ export default function Home() {
       {/* our work */}
       <div className="w-full bg-white py-16 p-4 lg:p-20">
         <div className=" flex flex-row justify-center container lg:flex-nowrap flex-wrap gap-6">
-          <div className="lg:w-1/2 flex flex-col justify-end items-end  p-4 lg:p-20 gap-6 text-right">
+          <div className="lg:w-1/2 flex flex-col lg:justify-end items-center lg:items-end  p-4 lg:p-20 gap-6 text-right">
             <p className="font-medium text-primary-sea">המטרה שלנו</p>
-            <h2 className="text-right text-black text-4xl font-bold">המטרה שלנו היא לספק שירות אמין, איכותי וזמין</h2>
-            <p>אנו נטפל לכם בכל תקלה בטווח זמנים נוח, אם איכות ללא פשרות ואחריות לכלל העבודות</p>
+            <h2 className="text-center lg:text-right text-black text-4xl font-bold">המטרה שלנו היא לספק שירות אמין, איכותי וזמין</h2>
+            <p className="text-center lg:text-right">אנו נטפל לכם בכל תקלה בטווח זמנים נוח, אם איכות ללא פשרות ואחריות לכלל העבודות</p>
             <Link href={"/services"} className={filledButton} >עוד פרטים</Link>
           </div>
           <div className=" text-right min-w-80 lg:w-1/2 flex flex-col justify-center items-center gap-6 pb-14 lg:pb-0">
@@ -228,7 +228,7 @@ export default function Home() {
         </span>
 
         <div className="flex flex-row justify-center flex-wrap gap-y-40 gap-12 mb-24">
-          <div className="relative min-w-96 p-4">
+          <div className="relative min-w-80 p-4">
             <Image
               src={pipe}
               alt="an image of a pipe"
@@ -243,7 +243,7 @@ export default function Home() {
               <Link className={underlineButton} href={"/services/leak-repair"}>לכתבה</Link>
             </span>
           </div>
-          <div className="relative min-w-96 p-4">
+          <div className="relative min-w-80 p-4">
             <Image
               src={workingPlumber}
               alt="an image of a plumber in his work"
@@ -259,7 +259,7 @@ export default function Home() {
             </span>
 
           </div>
-          <div className="relative min-w-96 p-4">
+          <div className="relative min-w-80 p-4">
             <Image
               src={sink}
               alt="an image of a sink"
