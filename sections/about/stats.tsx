@@ -16,12 +16,13 @@ function Card({
 }: cardProps) {
     return (
         <div className='flex flex-col gap-4 text-2xl text-white font-bold w-fit z-10'>
-            <span className='flex flex-row gap-4 justify-between items-center'>
+            <span className='flex flex-row gap-4 justify-between items-center z-50'>
                 <Image
                     src={imgSrc}
                     width={80}
                     height={80}
                     alt={alt}
+                    className='z-30'
                 />
                 <p>{number}</p>
             </span>
@@ -31,9 +32,8 @@ function Card({
 
 export default function Stats() {
     return (
-        <div className='bg-primary-sea p-20 flex flex-col justify-between items-center gap-20 box-border relative z-10'>
-            <span className=" absolute border-[20px] border-secondary-text opacity-30 w-96 h-96 block rounded-full -top-12 -left-1/2 lg:top-10 right-0 z-0" />
-            <span className=" absolute border-[50px] border-gray w-96 h-96 block rounded-full top-2/3 md:top-96 -right-1/2 z-0 opacity-30" />
+        <div className='bg-primary-sea p-20 flex flex-col justify-between items-center gap-20 box-border relative z-50'>
+            <span className=" absolute border-[50px] border-gray w-96 h-96 block rounded-full top-2/3 md:top-96 -right-1/2 -z-10 opacity-30" />
             <Card
                 imgSrc='/icons/google.svg'
                 alt='a logo of google'

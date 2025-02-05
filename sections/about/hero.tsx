@@ -3,10 +3,10 @@ import SideBySide from '../sideBySide'
 
 export default function Hero() {
     return (
-        <div className='p-4 md:p-10 flex flex-col gap-8 relative container'>
+        <div className='p-4 md:p-10 flex flex-col gap-8 relative container z-50'>
 
             {/* circle animations */}
-            <span className=" absolute border-[20px] border-secondary-text opacity-30 w-96 h-96 block rounded-full top-0 -left-1/2 lg:top-10 right-0 z-0 lg:duration-300" />
+            <span className=" absolute border-[20px] border-secondary-text opacity-30 w-96 h-96 block rounded-full top-0 -left-1/2 lg:top-10 right-0 -z-10 lg:duration-300" />
             <span className=" absolute border-[50px] border-gray w-96 h-96 block rounded-full top-2/3 md:top-96 -right-1/2 z-0" />
 
             {/* heading */}
