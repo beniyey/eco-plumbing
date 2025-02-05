@@ -1,6 +1,9 @@
+import { filledButton } from "@/components/buttons";
 import Hero from "@/sections/about/hero";
 import Stats from "@/sections/about/stats";
+import OurWork from "@/sections/ourWork";
 import Image from "next/image";
+import Link from "next/link"
 
 export const metadata = {
     title: "אודות - אקו פתרונות אינסטלציה"
@@ -29,6 +32,8 @@ export default function About() {
 
                 <Hero />
                 <Stats />
+                <OurWork />
+
             </div>
         </>
     );
