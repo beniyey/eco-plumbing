@@ -2,12 +2,6 @@
 import { filledButton, underlineButton } from "@/components/buttons";
 import Image from "next/image";
 import Link from "next/link";
-import plumber from "../images/plumber.webp"
-import sinkRepair from "../images/sink-repair.webp"
-import washingHands from "../images/washing-hands.webp"
-import sink from "../images/sink.jpg"
-import workingPlumber from "../images/plumber-working.jpg"
-import pipe from "../images/pipe.jpg"
 import Reviews from "@/sections/reviews";
 
 
@@ -21,7 +15,7 @@ export default function Home() {
         <div className="relative w-fit m-auto">
           <Image
             className=" z-40"
-            src={plumber}
+            src={"/images/plumber.webp"}
             alt="an image of a plumber"
             width={500}
             height={500}
@@ -70,13 +64,15 @@ export default function Home() {
           <div className="relative lg:w-1/2 p-6 lg:p-20">
             <Image
               className="rounded-xl shadow-xl w-4/5 lg:w-full m-auto"
-              src={sinkRepair}
+              src={"/images/sink-repair.webp"}
+              height={1000}
               alt="a plumber repairing a sink"
               width={600}
             />
             <Image
               className="absolute rounded-xl right-6 bottom-2 lg:right-0 lg:bottom-8 image-shadow w-1/4"
-              src={washingHands}
+              src={"/images/washing-hands.webp"}
+              height={1000}
               alt="a person washing its hands"
               width={200}
             />
@@ -104,7 +100,8 @@ export default function Home() {
           <div className=" flex flex-row flex-wrap gap-y-48 justify-center gap-12 mb-24">
             <div className="relative min-w-80 p-4">
               <Image
-                src={pipe}
+                src={"/images/pipe.jpg"}
+                height={1000}
                 alt="an image of a pipe"
                 width={400}
                 height={400}
@@ -119,7 +116,8 @@ export default function Home() {
             </div>
             <div className="relative min-w-80 p-4">
               <Image
-                src={workingPlumber}
+                src={"/images/plumber-working.jpg"}
+                height={1000}
                 alt="an image of a plumber in his work"
                 width={400}
                 height={400}
@@ -135,7 +133,8 @@ export default function Home() {
             </div>
             <div className="relative min-w-80 p-4">
               <Image
-                src={sink}
+                src={"/images/sink.jpg"}
+                height={1000}
                 alt="an image of a sink"
                 width={400}
                 height={400}
@@ -233,7 +232,8 @@ export default function Home() {
         <div className="flex flex-row justify-center flex-wrap gap-y-40 gap-12 mb-24">
           <div className="relative min-w-80 p-4">
             <Image
-              src={pipe}
+              src={"/images/pipe.jpg"}
+              height={1000}
               alt="an image of a pipe"
               width={400}
               height={400}
@@ -248,7 +248,8 @@ export default function Home() {
           </div>
           <div className="relative min-w-80 p-4">
             <Image
-              src={workingPlumber}
+              src={"/images/plumber-working.jpg"}
+              height={1000}
               alt="an image of a plumber in his work"
               width={400}
               height={400}
@@ -264,7 +265,8 @@ export default function Home() {
           </div>
           <div className="relative min-w-80 p-4">
             <Image
-              src={sink}
+              src={"/images/sink.jpg"}
+              height={1000}
               alt="an image of a sink"
               width={400}
               height={400}

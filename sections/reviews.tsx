@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import reviews from "@/data/reviews.json"
 import { outlinedButton } from '@/components/buttons'
 import Image from 'next/image'
-import avatar from "../images/avatar-portrait-svgrepo-com.svg"
 
 type Props = {}
 
@@ -35,7 +34,7 @@ export default function Reviews({ }: Props) {
             </div>
             <div className='relative lg:w-1/2 flex justify-center items-center'>
                 <Image
-                    src={avatar}
+                    src={"/images/avatar-portrait-svgrepo-com.svg"}
                     alt='an image of an avatar'
                     width={400}
                     height={400}
