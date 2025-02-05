@@ -8,7 +8,7 @@ export const metadata = {
 export default function About() {
     return (
         <>
-            <div className="m-auto flex flex-col gap-8">
+            <div className="m-auto flex flex-col gap-8 bg-white">
                 {/* Hero Section */}
                 <section className="relative h-[30vh] lg:h-[30vh]">
                     {/* Overlay with a gradient for better text contrast */}
