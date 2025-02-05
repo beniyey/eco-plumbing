@@ -101,7 +101,6 @@ export default function Home() {
             <div className="relative min-w-80 p-4">
               <Image
                 src={"/images/pipe.jpg"}
-                height={1000}
                 alt="an image of a pipe"
                 width={400}
                 height={400}
@@ -117,7 +116,6 @@ export default function Home() {
             <div className="relative min-w-80 p-4">
               <Image
                 src={"/images/plumber-working.jpg"}
-                height={1000}
                 alt="an image of a plumber in his work"
                 width={400}
                 height={400}
@@ -134,7 +132,6 @@ export default function Home() {
             <div className="relative min-w-80 p-4">
               <Image
                 src={"/images/sink.jpg"}
-                height={1000}
                 alt="an image of a sink"
                 width={400}
                 height={400}
@@ -233,7 +230,6 @@ export default function Home() {
           <div className="relative min-w-80 p-4">
             <Image
               src={"/images/pipe.jpg"}
-              height={1000}
               alt="an image of a pipe"
               width={400}
               height={400}
@@ -249,7 +245,6 @@ export default function Home() {
           <div className="relative min-w-80 p-4">
             <Image
               src={"/images/plumber-working.jpg"}
-              height={1000}
               alt="an image of a plumber in his work"
               width={400}
               height={400}
@@ -266,7 +261,6 @@ export default function Home() {
           <div className="relative min-w-80 p-4">
             <Image
               src={"/images/sink.jpg"}
-              height={1000}
               alt="an image of a sink"
               width={400}
               height={400}
