@@ -1,4 +1,5 @@
 import Hero from "@/sections/about/hero";
+import Stats from "@/sections/about/stats";
 import Image from "next/image";
 
 export const metadata = {
@@ -26,7 +27,8 @@ export default function About() {
                     </div>
                 </section>
 
-                <Hero></Hero>
+                <Hero />
+                <Stats />
             </div>
         </>
     );
