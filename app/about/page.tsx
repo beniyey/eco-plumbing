@@ -1,13 +1,38 @@
-import { filledButton } from "@/components/buttons";
 import Hero from "@/sections/about/hero";
 import Stats from "@/sections/about/stats";
 import OurWork from "@/sections/ourWork";
+import Reviews from "@/sections/reviews";
 import Image from "next/image";
-import Link from "next/link"
 
 export const metadata = {
-    title: "אודות - אקו פתרונות אינסטלציה"
-}
+    title: "אודות -אקו פתרונות אינסטלציה",
+    description: "מחפשים אינסטלטור מקצועי ואמין? אנו מספקים שירותי אינסטלציה איכותיים, תיקון נזילות, פתיחת סתימות והתקנת דודי שמש. זמינות 24/7!",
+    keywords: [
+        "אינסטלטור מומלץ",
+        "שירותי אינסטלציה",
+        "אינסטלטור 24/7",
+        "אינסטלטור מקצועי",
+        "אינסטלטור עם המלצות",
+        "תיקון בעיות אינסטלציה",
+        "מחירים הוגנים לאינסטלציה",
+        "זמינות מיידית לתיקוני אינסטלציה"
+    ],
+    openGraph: {
+        title: "אודות -אקו פתרונות אינסטלציה",
+        description: "שירותי אינסטלציה מקצועיים. אנו מתמחים בתיקון נזילות, פתיחת סתימות, החלפת צנרת ושירותי אינסטלציה נוספים. צרו קשר עכשיו!",
+        url: "https://yourwebsite.co.il/about",
+        type: "website",
+        images: [
+            {
+                url: "https://youtube.com/shorts/JYfWcU1xvoQ?feature=shared",
+                width: 1200,
+                height: 630,
+                alt: "אינסטלטור בעבודה",
+            }
+        ],
+    },
+};
+
 
 export default function About() {
     return (
@@ -33,6 +58,9 @@ export default function About() {
                 <Hero />
                 <Stats />
                 <OurWork />
+                <div className="bg-background-primary-light">
+                    <Reviews />
+                </div>
 
             </div>
         </>

@@ -1,5 +1,7 @@
 import React from 'react'
 import SideBySide from '../sideBySide'
+import Link from 'next/link'
+import { filledButton } from '@/components/buttons'
 
 export default function Hero() {
     return (
@@ -16,7 +18,9 @@ export default function Hero() {
                 <p className='text-center'>אנחנו צוות אינסטלטורים מנוסה המספק שירותי תיקון, התקנה ותחזוקה.
                     מתמחים בנזילות, פתיחת סתימות והתקנת מערכות מים לבתים ועסקים.
                     שמים דגש על שירות אמין, עבודה יסודית ופתרונות מותאמים אישית.</p>
+                <Link className={filledButton + " mt-6"} href={"/contact"} >לתיאום ביקור</Link>
             </section>
+
 
             {/* side by sides */}
             <section className='flex flex-col'>
