@@ -14,10 +14,10 @@ export const siteConfig = {
             label: "שירותים",
             href: "/services",
         },
-        {
-            label: "בלוג",
-            href: "/blog",
-        },
+        // {
+        //     label: "בלוג",
+        //     href: "/blog",
+        // },
         {
             label: "שאלות נפוצות",
             href: "/faq",

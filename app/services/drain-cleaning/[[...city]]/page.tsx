@@ -59,48 +59,48 @@ export default function Page({ params }: { params: Promise<{ city?: string[] }> 
                 </div>
 
                 {/* Image Section */}
-                <div className="relative w-full h-[400px] p-6">
+                <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center gap-12 items-center lg:flex-row-reverse lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
                     <Image
                         src="/images/drain-cleaning-service.png"
                         alt="פתיחת סתימות ביובית"
                         width={500}
                         height={500}
-                        className="rounded-2xl shadow-2xl border-4 border-secondary-text"
+                        className="rounded-2xl aspect-square shadow-2xl object-cover border-4 border-secondary-text"
                     />
-                </div>
 
-                {/* article section */}
-                <section className="bg-gray-50 py-16 px-6 md:px-20 text-right text-primary">
-                    <div className="max-w-5xl mx-auto">
-                        <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">למה סתימות קורות?</h2>
+                    {/* article section */}
+                    <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
+                        <div className="max-w-5xl mx-auto">
+                            <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">למה סתימות קורות?</h2>
 
-                        <div className="space-y-6 text-lg leading-relaxed">
-                            <p>
-                                סתימות בצנרת נגרמות כתוצאה מהצטברות של שומנים, שיער, מגבונים, שורשים בביוב וחלקיקים אחרים שמצטברים לאורך הזמן בצנרת.
-                                סתימה יכולה להופיע בקו פנימי (כיור, אסלה) או בקווים החיצוניים של הביוב.
-                            </p>
+                            <div className="space-y-6 text-lg leading-relaxed">
+                                <p>
+                                    סתימות בצנרת נגרמות כתוצאה מהצטברות של שומנים, שיער, מגבונים, שורשים בביוב וחלקיקים אחרים שמצטברים לאורך הזמן בצנרת.
+                                    סתימה יכולה להופיע בקו פנימי (כיור, אסלה) או בקווים החיצוניים של הביוב.
+                                </p>
 
-                            <p>
-                                במקרים רבים הסתימה תתבטא בזרימה איטית, ריח רע, עלייה חוזרת של מים או אף הצפה ממשית.
-                                ברגעים כאלה חשוב לטפל בבעיה במהירות כדי למנוע נזקים לרצפה, לקירות או למערכות החשמל.
-                            </p>
+                                <p>
+                                    במקרים רבים הסתימה תתבטא בזרימה איטית, ריח רע, עלייה חוזרת של מים או אף הצפה ממשית.
+                                    ברגעים כאלה חשוב לטפל בבעיה במהירות כדי למנוע נזקים לרצפה, לקירות או למערכות החשמל.
+                                </p>
 
-                            <h3 className="text-xl font-semibold mt-8">איך ניתן למנוע סתימות?</h3>
-                            <ul className="list-disc pr-5 space-y-2 mt-3 text-base">
-                                <li>להימנע מהשלכת מגבונים ופסולת לשירותים</li>
-                                <li>שפיכת מים רותחים עם סודה לשתייה אחת לחודש בקווי הניקוז</li>
-                                <li>תחזוקה שנתית ע\"י איש מקצוע כולל ניקוי בלחץ מים</li>
-                                <li>בדיקה תקופתית עם מצלמה במבנים ישנים</li>
-                            </ul>
+                                <h3 className="text-xl font-semibold mt-8">איך ניתן למנוע סתימות?</h3>
+                                <ul className="list-disc pr-5 space-y-2 mt-3 text-base">
+                                    <li>להימנע מהשלכת מגבונים ופסולת לשירותים</li>
+                                    <li>שפיכת מים רותחים עם סודה לשתייה אחת לחודש בקווי הניקוז</li>
+                                    <li>תחזוקה שנתית ע\"י איש מקצוע כולל ניקוי בלחץ מים</li>
+                                    <li>בדיקה תקופתית עם מצלמה במבנים ישנים</li>
+                                </ul>
 
-                            <h3 className="text-xl font-semibold mt-8">איך פותרים סתימה מקצועית?</h3>
-                            <p>
-                                אנו משתמשים בשיטות מתקדמות הכוללות ביובית עם לחץ מים גבוה, כבל חשמלי לפתיחה מכנית ומצלמות לאיתור מדויק של מקור הסתימה.
-                                השירות מבוצע בצורה נקייה, ללא הרס, וכולל דוח מצב מקצועי במידת הצורך.
-                            </p>
+                                <h3 className="text-xl font-semibold mt-8">איך פותרים סתימה מקצועית?</h3>
+                                <p>
+                                    אנו משתמשים בשיטות מתקדמות הכוללות ביובית עם לחץ מים גבוה, כבל חשמלי לפתיחה מכנית ומצלמות לאיתור מדויק של מקור הסתימה.
+                                    השירות מבוצע בצורה נקייה, ללא הרס, וכולל דוח מצב מקצועי במידת הצורך.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
 
 
                 {/* Why Us */}
@@ -171,9 +171,9 @@ export default function Page({ params }: { params: Promise<{ city?: string[] }> 
                     <p className="mb-6 text-lg text-primary-text">
                         השאר פרטים ונחזור אליך תוך דקות או התקשר עכשיו – נגיע עם ביובית וציוד מלא
                     </p>
-                    <button className={filledButton}>
+                    <a href="tel:0526736935" className={filledButton}>
                         ☎️ דברו איתנו עכשיו
-                    </button>
+                    </a>
                 </div>
 
                 {/* Contact Section */}

@@ -239,7 +239,7 @@ export default function Home() {
               <p className="text-right my-5">
                 מים עומדים יכולים להעיד על שלל בעיות חוץ מסתימה – אותן חשוב לבדוק לפני גישה לטיפול. בקרו בכתבה ולמדו עליהן.
               </p>
-              <Link className={underlineButton} href="/services/leak-repair">
+              <Link className={underlineButton} href="/services/pipe-repair">
                 לכתבה
               </Link>
             </span>
