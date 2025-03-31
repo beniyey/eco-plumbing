@@ -19,8 +19,8 @@ export const siteConfig = {
         //     href: "/blog",
         // },
         {
-            label: "שאלות נפוצות",
-            href: "/faq",
+            label: "צור קשר",
+            href: "/contact",
         }
     ],
     links: {
