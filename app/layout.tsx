@@ -7,6 +7,8 @@ import Footer from "@/components/footer";
 import "animate.css/animate.min.css";
 import { Space_Grotesk } from "next/font/google";
 import { Suspense } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,8 +48,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={"bg-background-primary-light"}>
-      <body>
+      <body className="relative">
         <Header />
+        <Link
+          target="blank"
+          href="https://api.whatsapp.com/send?phone=972526736935"
+          title="שלחו לנו הודעה"
+          className="fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50"
+        >
+          <Image
+            src={"/whatsapp-svgrepo-com.svg"}
+            height={60}
+            width={60}
+            alt="a logo of whatsapp"
+            className="w-16"
+          />
+        </Link>
+
         <Suspense fallback={<p>loading...</p>}>
           {children}
         </Suspense>

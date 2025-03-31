@@ -171,9 +171,9 @@ export default function Page({ params }: { params: Promise<{ city?: string[] }> 
                     <p className="mb-6 text-lg text-primary-text">
                         השאר פרטים ונחזור אליך תוך דקות או התקשר עכשיו – נגיע עם ביובית וציוד מלא
                     </p>
-                    <button className={filledButton}>
+                    <a href="tel:0526736935" className={filledButton}>
                         ☎️ דברו איתנו עכשיו
-                    </button>
+                    </a>
                 </div>
 
                 {/* Contact Section */}
