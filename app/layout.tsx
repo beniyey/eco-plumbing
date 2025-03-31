@@ -6,6 +6,7 @@ import 'animate.css';
 import Footer from "@/components/footer";
 import "animate.css/animate.min.css";
 import { Space_Grotesk } from "next/font/google";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +48,9 @@ export default function RootLayout({
     <html lang="en" className={"bg-background-primary-light"}>
       <body>
         <Header />
-        {children}
+        <Suspense fallback={<p>loading...</p>}>
+          {children}
+        </Suspense>
         <Footer />
       </body>
     </html>
