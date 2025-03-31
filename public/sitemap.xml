@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Static Pages -->
+  <url><loc>https://www.eco-plumbers.com/</loc></url>
+  <url><loc>https://www.eco-plumbers.com/about</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services</loc></url>
+  <url><loc>https://www.eco-plumbers.com/contact</loc></url>
+
+  <!-- Main Services -->
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing</loc></url>
+
+  <!-- Cities -->
+  <!-- Assuming these are the cities you operate in -->
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/נתניה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/הרצליה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/רעננה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/כפר-סבא</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/הוד-השרון</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/תל-מונד</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/drain-cleaning/אבן-יהודה</loc></url>
+
+  <!-- Duplicate for all services and cities -->
+  <url><loc>https://www.eco-plumbers.com/services/jetting/נתניה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting/הרצליה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting/רעננה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting/כפר-סבא</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting/הוד-השרון</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting/תל-מונד</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/jetting/אבן-יהודה</loc></url>
+
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/נתניה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/הרצליה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/רעננה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/כפר-סבא</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/הוד-השרון</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/תל-מונד</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/leak-detection/אבן-יהודה</loc></url>
+
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/נתניה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/הרצליה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/רעננה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/כפר-סבא</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/הוד-השרון</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/תל-מונד</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/no-dig-solutions/אבן-יהודה</loc></url>
+
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/נתניה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/הרצליה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/רעננה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/כפר-סבא</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/הוד-השרון</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/תל-מונד</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/pipe-repair/אבן-יהודה</loc></url>
+
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/נתניה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/הרצליה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/רעננה</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/כפר-סבא</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/הוד-השרון</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/תל-מונד</loc></url>
+  <url><loc>https://www.eco-plumbers.com/services/plumbing/אבן-יהודה</loc></url>
+</urlset>
