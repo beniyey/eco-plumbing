@@ -33,7 +33,7 @@ export default function Footer({ }: Props) {
                         </Link>
                         <Link href="https://api.whatsapp.com/send?phone=972526736935" title='שלחו לנו הודעה' className='text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2'>
                             <Image
-                                src={"whatsapp-svgrepo-com.svg"}
+                                src={"/whatsapp-svgrepo-com.svg"}
                                 height={28}
                                 width={28}
                                 alt='a logo of whatsapp'
@@ -41,7 +41,7 @@ export default function Footer({ }: Props) {
                         </Link>
                         <Link href="mailto:bensp@eco-plumbers.com" title='שלחו לנו הודעה' className='text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2'>
                             <Image
-                                src={"gmail-svgrepo-com.svg"}
+                                src={"/gmail-svgrepo-com.svg"}
                                 height={28}
                                 width={28}
                                 alt='a logo of whatsapp'

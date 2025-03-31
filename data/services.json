@@ -1,0 +1,63 @@
+[
+    {
+      "serviceName": "שירותי ביובית",
+      "category": "תחזוקה",
+      "overview": "פתיחת סתימות בלחץ מים גבוה, טיפול בשורשים, וניקוי קווים מהיר ונקי עם ציוד ביובית מתקדם – מתאים לבתים פרטיים וועדי בתים.",
+      "imageSrc": "/images/sink-repair.webp",
+      "linkTo": "/services/jetting",
+      "pageContent": {
+        
+      }
+    },
+    {
+      "serviceName": "איתור נזילות",
+      "category": "תחזוקה",
+      "overview": "איתור נזילות מדויק באמצעות מצלמה תרמית וכלי מדידה מתקדמים – בלי נזק מיותר, עם פתרון במקום ודוח מקצועי.",
+      "imageSrc": "/images/plumber-working.jpg",
+      "linkTo": "/services/leak-detection",
+      "pageContent": {
+        
+      }
+    },
+    {
+      "serviceName": "תיקוני צנרת",
+      "category": "תחזוקה",
+      "overview": "תיקוני צנרת מקצועיים לכל סוגי הנזקים – קווי מים וביוב, מעל הקרקע ומתחתיה, עם עבודה נקייה ועמידה לאורך זמן.",
+      "imageSrc": "/images/pipe.jpg",
+      "linkTo": "/services/pipe-repair",
+      "pageContent": {
+        
+      }
+    },
+    {
+      "serviceName": "תיקוני אל הרס",
+      "category": "תחזוקה",
+      "overview": "תיקון צנרת סמויה בלי לשבור קירות – פתרונות מתקדמים, מדויקים, עם איתור נזק וטיפול נקודתי.",
+      "imageSrc": "/images/pipe-fitting.jpg",
+      "linkTo": "/services/no-dig-solutions",
+      "pageContent": {
+        
+      }
+    },
+    {
+      "serviceName": "פתיחת סתימות",
+      "category": "תחזוקה",
+      "overview": "פתיחת סתימות פנימיות וחיצוניות במהירות וביעילות, עם ציוד חדיש ושירות חירום 24/7.",
+      "imageSrc": "/images/pipes-arranged.jpg",
+      "linkTo": "/services/drain-cleaning",
+      "pageContent": {
+        
+      }
+    },
+    {
+      "serviceName": "שירותי אינסטלציה כלליים",
+      "category": "התקנות",
+      "overview": "כל עבודות האינסטלציה לבית ולעסק – התקנות, החלפות, תחזוקה שוטפת ושירותי חירום עם אחריות מלאה.",
+      "imageSrc": "/images/plumber.webp",
+      "linkTo": "/services/plumbing",
+      "pageContent": {
+        
+      }
+    }
+  ]
+  

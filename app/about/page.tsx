@@ -1,3 +1,4 @@
+import ContactSection from "@/components/contact-section";
 import Hero from "@/sections/about/hero";
 import Stats from "@/sections/about/stats";
 import OurWork from "@/sections/ourWork";
@@ -61,6 +62,8 @@ export default function About() {
                 <div className="bg-background-primary-light">
                     <Reviews />
                 </div>
+
+                <ContactSection />
 
             </div>
         </>
