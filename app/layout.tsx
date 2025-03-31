@@ -9,6 +9,8 @@ import { Space_Grotesk } from "next/font/google";
 import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -119,6 +121,8 @@ export default function RootLayout({
         </Suspense>
         <Footer />
       </body>
+
+      <GoogleAnalytics gaId="G-TDYRFHXYKS" />
     </html>
   );
 }
