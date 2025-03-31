@@ -28,9 +28,9 @@ const items = [
     }
 ];
 
-export default function Page({ params }: { params: { city?: string[] } }) {
-    const cityName = params.city ? "ב" + decodeURIComponent(params.city[0]) : null;
+export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const cityName = (await params).city ? "ב" + decodeURIComponent((await params as { city: string[] }).city[0]) : null;
 
     const toggle = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
