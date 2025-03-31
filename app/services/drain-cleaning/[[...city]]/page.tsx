@@ -1,9 +1,8 @@
-"use client";
-
 import ContactSection from "@/sections/contact-section";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
+import TogglesGenerator from "@/components/toggles-generator";
 
 const items = [
     {
@@ -28,14 +27,41 @@ const items = [
     }
 ];
 
-export default function Page({ params }: { params: Promise<{ city?: string[] }> }) {
-    const { city } = React.use(params)
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-    const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
-
-    const toggle = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
+export async function generateMetadata({ params }: { params: { city?: string[] } }) {
+    const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
+  
+    const title = `פתיחת סתימות ${city} | שירות 24/7 עם ביובית מקצועית`;
+    const description = `נמאס מהריח? הצפה בבית? אנחנו ב-Eco Plumbers פותרים סתימות ${city} עם ביובית, מצלמה וכבל חשמלי – 24/7 כולל חגים. מעל 100 לקוחות מרוצים עם דירוג 9.9 במדרג!`;
+  
+    const image = "https://www.eco-plumbers.com/images/drain-cleaning-service.png"; // לוודא שזה URL תקין
+  
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `https://www.eco-plumbers.com/services/drain-cleaning/${city}`,
+        type: "website",
+        images: [{ url: image, width: 1200, height: 630, alt: title }]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [image]
+      },
+      alternates: {
+        canonical: `https://www.eco-plumbers.com/services/drain-cleaning/${city}`
+      },
+      metadataBase: new URL("https://www.eco-plumbers.com")
     };
+  }
+  
+
+export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
+    const { city } = await params
+    const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
     return (
         // Outer relative container for background decorations
@@ -120,35 +146,7 @@ export default function Page({ params }: { params: Promise<{ city?: string[] }> 
                 </div>
 
                 {/* Description Accordion */}
-                <div className="container rtl flex flex-col gap-6 p-4 relative">
-                    {/* decoration circles */}
-                    <div className="absolute bottom-0 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10"></div>
-
-                    <h2 className="text-3xl text-center font-bold mt-6">שאלות נפוצות</h2>
-                    {items.map((item, index) => (
-                        <div key={index} className="border-2 border-gray-250 rounded-md overflow-hidden">
-                            <button
-                                className="w-full text-right px-4 py-4 bg-gray-100 hover:bg-gray-200 font-semibold flex justify-between items-center"
-                                onClick={() => toggle(index)}
-                            >
-                                <span className={openIndex === index ? "text-primary-sea" : ""}>
-                                    {item.title}
-                                </span>
-                                <span>{openIndex === index ? "−" : "+"}</span>
-                            </button>
-                            <div
-                                className={`transition-all duration-300 overflow-hidden ${openIndex === index
-                                    ? "max-h-96 p-4 opacity-100"
-                                    : "max-h-0 p-0 opacity-0"
-                                    }`}
-                            >
-                                <div className="text-right text-sm text-gray-700">
-                                    {item.content}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <TogglesGenerator questions={items} />
 
                 {/* Testimonial Section */}
                 <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">

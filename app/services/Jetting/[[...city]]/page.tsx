@@ -1,9 +1,5 @@
-// גרסה לעמוד שירות ביובית – רק החלפת תוכן, ללא שינוי מבני או תמונתי
-
-"use client";
-
 import ContactSection from "@/sections/contact-section";
-import React, { useState } from "react";
+import TogglesGenerator from "@/components/toggles-generator";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 
@@ -30,14 +26,41 @@ const items = [
   }
 ];
 
-export default function Page({ params }: { params: Promise<{ city?: string[] }> }) {
-  const { city } = React.use(params);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
+export async function generateMetadata({ params }: { params: { city?: string[] } }) {
+  const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const title = `שירותי ביובית ${city} | פתיחת סתימות בלחץ מים 24/7`;
+  const description = `ביובית מקצועית ${city} לפתיחת סתימות, טיפול בשורשים, צילום קווים ושאיבות – זמינות מיידית, ציוד מתקדם ודירוג 9.9 במדרג. Eco Plumbers כאן בשבילך.`;
+
+  const image = "https://www.eco-plumbers.com/images/jetter-service.png";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://www.eco-plumbers.com/services/jetting/${city}`,
+      type: "website",
+      images: [{ url: image, width: 1200, height: 630, alt: title }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    },
+    alternates: {
+      canonical: `https://www.eco-plumbers.com/services/jetting/${city}`
+    },
+    metadataBase: new URL("https://www.eco-plumbers.com")
   };
+}
+
+
+export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
+  const { city } = await params;
+  const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
   return (
     <div className="relative overflow-hidden rtl">
@@ -106,25 +129,7 @@ export default function Page({ params }: { params: Promise<{ city?: string[] }> 
         </div>
 
         {/* FAQ Accordion */}
-        <div className="container rtl flex flex-col gap-6 p-4 relative">
-          <div className="absolute bottom-0 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10" />
-
-          <h2 className="text-3xl text-center font-bold mt-6">שאלות נפוצות</h2>
-          {items.map((item, index) => (
-            <div key={index} className="border-2 border-gray-250 rounded-md overflow-hidden">
-              <button
-                className="w-full text-right px-4 py-4 bg-gray-100 hover:bg-gray-200 font-semibold flex justify-between items-center"
-                onClick={() => toggle(index)}
-              >
-                <span className={openIndex === index ? "text-primary-sea" : ""}>{item.title}</span>
-                <span>{openIndex === index ? "−" : "+"}</span>
-              </button>
-              <div className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-96 p-4 opacity-100" : "max-h-0 p-0 opacity-0"}`}>
-                <div className="text-right text-sm text-gray-700">{item.content}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <TogglesGenerator questions={items}/>
 
         {/* Testimonial */}
         <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">

@@ -24,21 +24,40 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"]
 })
 
-export const metadata: Metadata = {
-  title: "אקו - שירותי אינסטלציה",
-  description: "שירותי אינסטלציה מתקדמים בכל אזור השרון, זמינות 24/7, תיקון נזילות, פתיחת סתימות, החלפת צנרת ועוד.",
+// app/layout.tsx or app/head.tsx (Next.js App Router)
+export const metadata = {
+  title: "Eco Plumbers | אינסטלטורים מקצועיים במרכז הארץ",
+  description:
+    "פתיחת סתימות, איתור נזילות, תיקוני צנרת ופתרונות אל הרס – Eco Plumbers מציעים שירות 24/7, ביובית מקצועית ודירוג 9.9 במדרג.",
   keywords: [
-    "אינסטלטור",
-    "תיקון נזילות",
-    "פתיחת סתימות",
-    "אינסטלציה",
-    "תיקון צנרת",
-    "תיקוני אל הרס",
-    "צילום קווי ביוב",
+    "אינסטלטור", "פתיחת סתימות", "איתור נזילות", "ביובית", "תיקון צנרת", "שיקום קווים", "אל הרס", "אינסטלציה", "תיקוני צנרת", "אינסטלטור מומלץ"
   ],
-  icons: [
-    "logo.svg"
-  ]
+  openGraph: {
+    title: "Eco Plumbers | אינסטלציה מקצועית במרכז הארץ",
+    description:
+      "שירותי אינסטלציה מתקדמים: פתיחת סתימות, ביובית, איתור נזילות, תיקוני אל הרס – עם זמינות 24/7 ודירוג מושלם במדרג.",
+    url: "https://www.eco-plumbers.com",
+    type: "website",
+    images: [
+      {
+        url: "https://www.eco-plumbers.com/images/site-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Eco Plumbers"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eco Plumbers",
+    description:
+      "מומחים באיתור נזילות, ביובית, פתיחת סתימות ופתרונות צנרת – זמינות מיידית.",
+    images: ["https://www.eco-plumbers.com/images/site-cover.png"]
+  },
+  alternates: {
+    canonical: "https://www.eco-plumbers.com"
+  },
+  metadataBase: new URL("https://www.eco-plumbers.com")
 };
 
 export default function RootLayout({
@@ -48,6 +67,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={"bg-background-primary-light"}>
+      <head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Eco Plumbers",
+            "url": "https://www.eco-plumbers.com",
+            "logo": "https://www.eco-plumbers.com/icons/logo.svg",
+            "image": "https://www.eco-plumbers.com/images/site-cover.png",
+            "description": "חברת אינסטלציה מתקדמת המספקת שירותים כגון פתיחת סתימות, איתור נזילות, תיקוני צנרת ושיקום ללא הרס, עם שירות מקצועי וזמינות 24/7.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "מרכז",
+              "addressCountry": "IL"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+972-526-736935",
+              "contactType": "customer service",
+              "areaServed": "IL",
+              "availableLanguage": ["Hebrew"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/eco.plumbers",
+              "https://www.instagram.com/eco_plumbing_il"
+            ]
+          })}
+        </script>
+
+      </head>
       <body className="relative">
         <Header />
         <Link
