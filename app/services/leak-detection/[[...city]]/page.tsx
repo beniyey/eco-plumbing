@@ -1,6 +1,6 @@
 "use client";
 
-import ContactSection from "@/components/contact-section";
+import ContactSection from "@/sections/contact-section";
 import { useState } from "react";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";

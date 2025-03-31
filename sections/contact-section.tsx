@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { filledButton } from "./buttons";
+import { filledButton } from "../components/buttons";
 
 export default function ContactSection() {
   const [name, setName] = useState("");

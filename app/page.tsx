@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reviews from "@/sections/reviews";
 import OurWork from "@/sections/ourWork";
-import ContactForm from "@/components/contact-section";
+import ContactForm from "@/sections/contact-section";
 
 // Reusable component to fade in/out based on viewport presence
 function FadeInSection({ children, className = "" }: { children?: any, className?: string }) {

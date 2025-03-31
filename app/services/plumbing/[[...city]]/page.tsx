@@ -1,7 +1,7 @@
 "use client";
 
-import ContactSection from "@/components/contact-section";
-import { useState } from "react";
+import ContactSection from "@/sections/contact-section";
+import React, { useState } from "react";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 
@@ -28,9 +28,10 @@ const items = [
     }
 ];
 
-export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
+export default function Page({ params }: { params: Promise<{ city?: string[] }> }) {
+    const { city } = React.use(params)
     const [openIndex, setOpenIndex] = useState<number | null>(null);
-    const cityName = (await params).city ? "ב" + decodeURIComponent((await params as { city: string[] }).city[0]) : null;
+    const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
     const toggle = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
