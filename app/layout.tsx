@@ -70,6 +70,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={"bg-background-primary-light"}>
       <head>
+        <link rel="icon" href="/logo.svg" />
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
