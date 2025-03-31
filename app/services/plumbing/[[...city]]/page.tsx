@@ -26,8 +26,9 @@ const items = [
     }
 ];
 
-export async function generateMetadata({ params }: { params: { city?: string[] } }) {
-    const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
+export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
+    let { city }: any = await params
+    city = city ? decodeURIComponent(city[0]) : "באזורכם";
   
     const title = `אינסטלטור ${city} | שירותי אינסטלציה כלליים 24/7`;
     const description = `אינסטלטור מקצועי ${city} – תיקוני צנרת, התקנות, החלפות, לחץ מים נמוך, דודי שמש, פתיחת סתימות ועוד. זמינות מיידית עם אחריות מלאה. Eco Plumbers.`;

@@ -26,8 +26,9 @@ const items = [
     }
 ];
 
-export async function generateMetadata({ params }: { params: { city?: string[] } }) {
-    const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
+export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
+    let { city }: any = await params
+    city = city ? decodeURIComponent(city[0]) : "באזורכם";
   
     const title = `תיקון צנרת ${city} | החלפה, ריתוך ואחריות מלאה`;
     const description = `שירותי תיקון צנרת ${city} – טיפול בנזילות, החלפת קווים, ריתוכים, חיזוקים ופתרון בעיות מים וביוב. זמינות 24/7 עם אחריות מלאה. Eco Plumbers.`;

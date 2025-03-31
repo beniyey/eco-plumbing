@@ -26,8 +26,9 @@ const items = [
   }
 ];
 
-export async function generateMetadata({ params }: { params: { city?: string[] } }) {
-  const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
+export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
+  let { city }: any = await params
+  city = city ? decodeURIComponent(city[0]) : "באזורכם";
 
   const title = `שירותי ביובית ${city} | פתיחת סתימות בלחץ מים 24/7`;
   const description = `ביובית מקצועית ${city} לפתיחת סתימות, טיפול בשורשים, צילום קווים ושאיבות – זמינות מיידית, ציוד מתקדם ודירוג 9.9 במדרג. Eco Plumbers כאן בשבילך.`;

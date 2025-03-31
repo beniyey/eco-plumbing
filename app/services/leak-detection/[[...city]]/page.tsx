@@ -26,8 +26,9 @@ const items = [
     }
 ];
 
-export async function generateMetadata({ params }: { params: { city?: string[] } }) {
-    const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
+export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
+    let { city }: any = await params
+    city = city ? decodeURIComponent(city[0]) : "באזורכם";
   
     const title = `איתור נזילות ${city} | מצלמה תרמית ודוחות ביטוח`;
     const description = `איתור נזילות מקצועי ${city} עם מצלמות תרמיות, ציוד אקוסטי וללא הרס – דוחות ביטוח, פתרון מיידי וזמינות 24/7. Eco Plumbers - אמינות וניסיון.`;

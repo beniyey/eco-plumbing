@@ -26,9 +26,10 @@ const items = [
   }
 ];
 
-export async function generateMetadata({ params }: { params: { city?: string[] } }) {
-    const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
-  
+export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
+    let { city }: any = await params
+    city = city ? decodeURIComponent(city[0]) : "באזורכם";
+      
     const title = `תיקון צנרת אל הרס ${city} | בלי לשבור קירות`;
     const description = `פתרון חכם לצנרת סמויה ${city} – צילום קווים, ציפוי פנימי לצנרת, ואחריות מלאה – בלי לשבור קירות או ריצוף. Eco Plumbers זמינים מידית עם טכנולוגיה מתקדמת.`;
   

@@ -27,37 +27,38 @@ const items = [
     }
 ];
 
-export async function generateMetadata({ params }: { params: { city?: string[] } }) {
-    const city = params.city ? decodeURIComponent(params.city[0]) : "באזורכם";
-  
+export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
+    let { city }: any = await params
+    city = city ? decodeURIComponent(city[0]) : "באזורכם";
+
     const title = `פתיחת סתימות ${city} | שירות 24/7 עם ביובית מקצועית`;
     const description = `נמאס מהריח? הצפה בבית? אנחנו ב-Eco Plumbers פותרים סתימות ${city} עם ביובית, מצלמה וכבל חשמלי – 24/7 כולל חגים. מעל 100 לקוחות מרוצים עם דירוג 9.9 במדרג!`;
-  
+
     const image = "https://www.eco-plumbers.com/images/drain-cleaning-service.png"; // לוודא שזה URL תקין
-  
+
     return {
-      title,
-      description,
-      openGraph: {
         title,
         description,
-        url: `https://www.eco-plumbers.com/services/drain-cleaning/${city}`,
-        type: "website",
-        images: [{ url: image, width: 1200, height: 630, alt: title }]
-      },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description,
-        images: [image]
-      },
-      alternates: {
-        canonical: `https://www.eco-plumbers.com/services/drain-cleaning/${city}`
-      },
-      metadataBase: new URL("https://www.eco-plumbers.com")
+        openGraph: {
+            title,
+            description,
+            url: `https://www.eco-plumbers.com/services/drain-cleaning/${city}`,
+            type: "website",
+            images: [{ url: image, width: 1200, height: 630, alt: title }]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [image]
+        },
+        alternates: {
+            canonical: `https://www.eco-plumbers.com/services/drain-cleaning/${city}`
+        },
+        metadataBase: new URL("https://www.eco-plumbers.com")
     };
-  }
-  
+}
+
 
 export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
     const { city } = await params
