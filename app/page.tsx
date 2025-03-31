@@ -140,7 +140,7 @@ export default function Home() {
               <p className="text-right my-5">
                 איתור ותיקון נזילות, פיצוצי צנרת ושדרוג מערכות מים מקצועי
               </p>
-              <Link className={underlineButton} href="/services/leak-repair">
+              <Link className={underlineButton} href="/services/pipe-repair">
                 לעמוד השירות
               </Link>
             </span>
@@ -198,7 +198,7 @@ export default function Home() {
             בין אם מדובר בתיקון צנרת, כרסום שורשים, פתיחת סתימות קשות או כל שירות אחר
           </h2>
           <p>אנו מספקים הצעות מחיר ללא עלות על כלל העבודות הדרושות</p>
-          <Link href="/estimate" className={filledButton + " mt-6"}>
+          <Link href="/contact" className={filledButton + " mt-6"}>
             לקבלת הצעת מחיר
           </Link>
         </div>
