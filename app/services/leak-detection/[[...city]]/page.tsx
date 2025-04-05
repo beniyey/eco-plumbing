@@ -20,7 +20,12 @@ const items = [
             "אנחנו מגיעים עם ציוד תרמי ואקוסטי, מאתרים את הנזילה בדיוק של סנטימטרים, מציעים פתרון במקום ונותנים דוח מקצועי ואחריות."
     },
     {
-        title: "למה לבחור ב-Eco Plumbers?",
+        title: "ומה אם לא הצלחתם לאתר את הנזילה? 😱",
+        content:
+            "במקרים נדירים שבהם לא ניתן לאתר את מקור הנזילה – אתם לא משלמים. באקו אינסטלציה אנחנו עובדים בהוגנות מלאה: לא פתרנו? לא שילמתם."
+    },
+    {
+        title: "למה לבחור ב'אקו אינסטלציה'?",
         content:
             "כי אנחנו לא שוברים בלי סיבה – אנחנו מאתרים, מציעים פתרון נקודתי, משתמשים בציוד מהמתקדם בארץ, וזמינים גם בשבת."
     }
@@ -29,35 +34,34 @@ const items = [
 export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
     let { city }: any = await params
     city = city ? decodeURIComponent(city[0]) : "באזורכם";
-  
+
     const title = `איתור נזילות ${city} | מצלמה תרמית ודוחות ביטוח`;
-    const description = `איתור נזילות מקצועי ${city} עם מצלמות תרמיות, ציוד אקוסטי וללא הרס – דוחות ביטוח, פתרון מיידי וזמינות 24/7. Eco Plumbers - אמינות וניסיון.`;
-  
+    const description = `איתור נזילות מקצועי ${city} עם מצלמות תרמיות, ציוד אקוסטי וללא הרס – דוחות ביטוח, פתרון מיידי וזמינות 24/7. אקו אינסטלציה - אמינות וניסיון.`;
+
     const image = "https://www.eco-plumbers.com/images/leak-detection.png";
-  
+
     return {
-      title,
-      description,
-      openGraph: {
         title,
         description,
-        url: `https://www.eco-plumbers.com/services/leak-detection/${city}`,
-        type: "website",
-        images: [{ url: image, width: 1200, height: 630, alt: title }]
-      },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description,
-        images: [image]
-      },
-      alternates: {
-        canonical: `https://www.eco-plumbers.com/services/leak-detection/${city}`
-      },
-      metadataBase: new URL("https://www.eco-plumbers.com")
+        openGraph: {
+            title,
+            description,
+            url: `https://www.eco-plumbers.com/services/leak-detection/${city}`,
+            type: "website",
+            images: [{ url: image, width: 1200, height: 630, alt: title }]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [image]
+        },
+        alternates: {
+            canonical: `https://www.eco-plumbers.com/services/leak-detection/${city}`
+        },
+        metadataBase: new URL("https://www.eco-plumbers.com")
     };
-  }
-  
+}
 
 export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
     const { city } = await params;
@@ -129,6 +133,27 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     </ul>
                 </div>
 
+                {/* נזקי נזילות ומחיר */}
+                <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center gap-12 items-center lg:flex-row lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
+                    <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
+                        <div className="max-w-5xl mx-auto">
+                            <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מה קורה אם לא מטפלים בנזילה?</h2>
+                            <div className="space-y-6 text-lg leading-relaxed">
+                                <p>
+                                    נזילה שלא מטופלת בזמן עלולה לגרום לנזק מצטבר: רטיבות בתקרה, קירות שמתפוררים, עובש וריח טחב שמזיקים לבריאות, והחמרה של הבעיה עד לפגיעה בתשתיות. לפעמים הנזק יתגלה רק כשהוא כבר גדול – או כששכנים יתלוננו על טפטוף.
+                                </p>
+                                <p>
+                                    ככל שממתינים יותר – הנזק גדל. טיפול מוקדם חוסך כסף, תיקונים יקרים ועוגמת נפש. אנחנו ב"אקו אינסטלציה" מאתרים את הנזילה במהירות ומונעים החמרה מיותרת.
+                                </p>
+                                <h3 className="text-xl font-semibold mt-8">מה המחיר?</h3>
+                                <p>
+                                    מחיר איתור נזילה מתחיל מ-₪800 לביקור הכולל צילום תרמי, בדיקות לחץ ודוח מסודר – בהתאם לסוג המקרה. התקשרו ונשמח לתת הצעת מחיר מותאמת.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
                 {/* FAQ Accordion */}
                 <TogglesGenerator questions={items} />
 
@@ -142,7 +167,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                         className="shadow-2xl bg-transparent rounded-full"
                     />
                     <blockquote className="max-w-2xl mx-auto text-lg italic text-gray-700">
-                        “לא ידענו מאיפה הרטיבות – Eco Plumbers הגיעו עם מצלמה תרמית, מצאו את הנזילה בלי לשבור כלום ופתרו את הבעיה. ממליץ!”
+                        “לא ידענו מאיפה הרטיבות – אקו אינסטלציה הגיעו עם מצלמה תרמית, מצאו את הנזילה בלי לשבור כלום ופתרו את הבעיה. ממליץ!”
                     </blockquote>
                     <p className="mt-4 font-bold text-secondary-text">עמית, תל אביב</p>
                 </div>

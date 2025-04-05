@@ -24,7 +24,7 @@ export default function ContactSection() {
 
     setLoading(true);
     try {
-      const response = await fetch(`https://hooks.zapier.com/hooks/catch/17609357/2cnscw8?name=${name}&email=${email}&phone=${phone}&message=${message}`, {method: "GET"});
+      const response = await fetch(`https://hooks.zapier.com/hooks/catch/17609357/2cnscw8?name=${name}&email=${email}&phone=${"+972"+phone}&message=${message}`, {method: "GET"});
 
       if (response.ok) {
         setSuccess("ההודעה נשלחה בהצלחה");
