@@ -15,17 +15,43 @@ export default function ContactSection() {
     e.preventDefault();
     setError("");
     setSuccess("");
-
-    // Basic validation
-    if (!name || !email || !phone || !message) {
-      setError("אנא מלא את כל השדות");
+  
+    // Validate that name includes at least first and last name
+    if (name.trim().split(" ").length < 2) {
+      setError("אנא הזן שם מלא הכולל שם פרטי ושם משפחה");
       return;
     }
-
+  
+    // Validate email using a simple regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("כתובת האימייל לא תקינה");
+      return;
+    }
+  
+    // Validate phone: must start with 0 and be 10 digits long (e.g., 0521234567)
+    const phoneRegex = /^0\d{9}$/;
+    if (!phoneRegex.test(phone)) {
+      setError("מספר טלפון לא תקין. יש להזין מספר טלפון ישראלי תקני");
+      return;
+    }
+  
+    // Format phone number: change the leading 0 to +972
+    const formattedPhone = phone.replace(/^0/, "+972");
+  
     setLoading(true);
     try {
-      const response = await fetch(`https://hooks.zapier.com/hooks/catch/17609357/2cnscw8?name=${name}&email=${email}&phone=${"+972"+phone}&message=${message}`, {method: "GET"});
-
+      const response = await fetch(
+        `https://hooks.zapier.com/hooks/catch/17609357/2cnscw8?name=${encodeURIComponent(
+          name
+        )}&email=${encodeURIComponent(
+          email
+        )}&phone=${encodeURIComponent(
+          formattedPhone
+        )}&message=${encodeURIComponent(message)}`,
+        { method: "GET" }
+      );
+  
       if (response.ok) {
         setSuccess("ההודעה נשלחה בהצלחה");
         setName("");
@@ -41,7 +67,7 @@ export default function ContactSection() {
       setLoading(false);
     }
   }
-
+  
   return (
     <section className="w-full bg-white py-20 px-6 relative overflow-hidden">
       {/* Background circles with refined placement and matching colors */}

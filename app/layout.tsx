@@ -28,14 +28,14 @@ const spaceGrotesk = Space_Grotesk({
 
 // app/layout.tsx or app/head.tsx (Next.js App Router)
 export const metadata = {
-  title: "Eco Plumbers | אינסטלטורים מקצועיים במרכז הארץ",
+  title: "אקו אינסטלציה | אינסטלטורים מקצועיים במרכז הארץ",
   description:
-    "פתיחת סתימות, איתור נזילות, תיקוני צנרת ופתרונות אל הרס – Eco Plumbers מציעים שירות 24/7, ביובית מקצועית ודירוג 9.9 במדרג.",
+    "פתיחת סתימות, איתור נזילות, תיקוני צנרת ופתרונות אל הרס – אקו אינסטלציה מציעים שירות 24/7, ביובית מקצועית ודירוג 9.9 במדרג.",
   keywords: [
     "אינסטלטור", "פתיחת סתימות", "איתור נזילות", "ביובית", "תיקון צנרת", "שיקום קווים", "אל הרס", "אינסטלציה", "תיקוני צנרת", "אינסטלטור מומלץ"
   ],
   openGraph: {
-    title: "Eco Plumbers | אינסטלציה מקצועית במרכז הארץ",
+    title: "אקו אינסטלציה | אינסטלציה מקצועית במרכז הארץ",
     description:
       "שירותי אינסטלציה מתקדמים: פתיחת סתימות, ביובית, איתור נזילות, תיקוני אל הרס – עם זמינות 24/7 ודירוג מושלם במדרג.",
     url: "https://www.eco-plumbers.com",
@@ -45,13 +45,13 @@ export const metadata = {
         url: "https://www.eco-plumbers.com/images/site-cover.png",
         width: 1200,
         height: 630,
-        alt: "Eco Plumbers"
+        alt: "אקו אינסטלציה"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eco Plumbers",
+    title: "אקו אינסטלציה",
     description:
       "מומחים באיתור נזילות, ביובית, פתיחת סתימות ופתרונות צנרת – זמינות מיידית.",
     images: ["https://www.eco-plumbers.com/images/site-cover.png"]
@@ -73,15 +73,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={"bg-background-primary-light"}>
       <head>
-
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Eco Plumbers",
+            "name": "אקו אינסטלציה",
             "url": "https://www.eco-plumbers.com",
-            "logo": "https://www.eco-plumbers.com/icons/logo.svg",
-            "image": "https://www.eco-plumbers.com/images/site-cover.png",
+            "logo": "https://www.eco-plumbers.com/favicon.ico",
             "description": "חברת אינסטלציה מתקדמת המספקת שירותים כגון פתיחת סתימות, איתור נזילות, תיקוני צנרת ושיקום ללא הרס, עם שירות מקצועי וזמינות 24/7.",
             "address": {
               "@type": "PostalAddress",
@@ -94,11 +92,7 @@ export default function RootLayout({
               "contactType": "customer service",
               "areaServed": "IL",
               "availableLanguage": ["Hebrew"]
-            },
-            "sameAs": [
-              "https://www.facebook.com/eco.plumbers",
-              "https://www.instagram.com/eco_plumbing_il"
-            ]
+            }
           })}
         </script>
 
