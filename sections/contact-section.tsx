@@ -24,7 +24,7 @@ export default function ContactSection() {
 
     setLoading(true);
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://hooks.zapier.com/hooks/catch/17609357/2cnscw8/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, message }),
