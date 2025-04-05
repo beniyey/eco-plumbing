@@ -60,6 +60,9 @@ export const metadata = {
     canonical: "https://www.eco-plumbers.com"
   },
   metadataBase: new URL("https://www.eco-plumbers.com")
+  , icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
