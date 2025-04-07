@@ -10,6 +10,9 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import dynamic from "next/dynamic";
+import PixelTracker from "@/components/pixel-tracker";
+
 
 
 const geistSans = Geist({
@@ -49,13 +52,6 @@ export const metadata = {
       }
     ]
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "אקו אינסטלציה",
-    description:
-      "מומחים באיתור נזילות, ביובית, פתיחת סתימות ופתרונות צנרת – זמינות מיידית.",
-    images: ["https://www.eco-plumbers.com/images/site-cover.png"]
-  },
   alternates: {
     canonical: "https://www.eco-plumbers.com"
   },
@@ -71,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={"bg-background-primary-light"}>
+    <html lang="he" className={"bg-background-primary-light"}>
       <head>
         <script type="application/ld+json">
           {JSON.stringify({
@@ -91,13 +87,43 @@ export default function RootLayout({
               "telephone": "+972-526-736935",
               "contactType": "customer service",
               "areaServed": "IL",
-              "availableLanguage": ["Hebrew"]
+              "availableLanguage": ["Hebrew", "Russian", "English"]
             }
           })}
         </script>
 
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?                         
+              n.callMethod.apply(n,arguments):n.queue.push   
+              (arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!
+              0;n.version='2.0';n.queue=[];t=b.createElement(e);
+              t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,
+              'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', 'YOUR_PIXEL_ID');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=
+            PageView&noscript=1"/>
+        </noscript>
+
+        {/* meta pixel */}
+
+
       </head>
       <body className="relative">
+        <PixelTracker />
         <Header />
         <Link
           target="blank"
