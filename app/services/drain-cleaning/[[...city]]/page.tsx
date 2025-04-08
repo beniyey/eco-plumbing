@@ -129,6 +129,9 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     </section>
                 </div>
 
+                {/* Contact Section */}
+                <ContactSection />
+
 
                 {/* Why Us */}
                 <div className="text-center px-6 md:px-20 py-10 relative">

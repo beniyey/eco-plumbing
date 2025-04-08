@@ -10,8 +10,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GoogleAnalytics } from '@next/third-parties/google'
-import dynamic from "next/dynamic";
-import PixelTracker from "@/components/pixel-tracker";
+
 
 
 
@@ -91,46 +90,15 @@ export default function RootLayout({
             }
           })}
         </script>
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?                         
-              n.callMethod.apply(n,arguments):n.queue.push   
-              (arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!
-              0;n.version='2.0';n.queue=[];t=b.createElement(e);
-              t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,
-              'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', 'YOUR_PIXEL_ID');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=
-            PageView&noscript=1"/>
-        </noscript>
-
-        {/* meta pixel */}
-
-
       </head>
       <body className="relative">
-        <PixelTracker />
         <Header />
         <Link
           target="blank"
           href="https://api.whatsapp.com/send?phone=972526736935"
           title="שלחו לנו הודעה"
           className="fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50"
-        >
+        >     
           <Image
             src={"/whatsapp-svgrepo-com.svg"}
             height={60}

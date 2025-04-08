@@ -118,6 +118,9 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     </section>
                 </div>
 
+                {/* Contact Section */}
+                <ContactSection />
+
                 {/* Why Us */}
                 <div className="text-center px-6 md:px-20 py-10 relative">
                     <div className="absolute top-10 -left-20 w-60 h-60 bg-secondary-text rounded-full opacity-20" />
@@ -134,7 +137,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                 </div>
 
                 {/* נזקי נזילות ומחיר */}
-                <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center gap-12 items-center lg:flex-row lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
+                <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center items-center lg:flex-row lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
                     <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
                         <div className="max-w-5xl mx-auto">
                             <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מה קורה אם לא מטפלים בנזילה?</h2>
@@ -152,6 +155,9 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                             </div>
                         </div>
                     </section>
+                    <a href="tel:0526736935" className={filledButton + " m-auto mt-8"}>
+                        ☎️ לשיחת ייעוץ חינם חייגו
+                    </a>
                 </div>
 
                 {/* FAQ Accordion */}
