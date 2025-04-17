@@ -2,6 +2,7 @@ import ContactSection from "@/sections/contact-section";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
+import ReviewsSlider from "@/sections/reviews";
 
 const items = [
     {
@@ -78,11 +79,17 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                 {/* Hero */}
                 <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
                     <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
-                        איתור נזילות {cityName} <span className="text-secondary-text">ללא הרס ובדיוק מירבי</span>
+                        רטיבות בקיר? מאתרים את הנזילה בלי לשבור – {cityName} <span className="text-secondary-text">עם דו״ח ביטוח מלא והגעה מיידית!</span>
                     </h1>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea">
-                        מצלמות תרמיות, ציוד אקוסטי, דוחות מקצועיים ופתרון מדויק – בלי לנחש, בלי לשבור, בלי הפתעות
+                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea ">
+                        מצלמות תרמיות, ציוד אקוסטי, דוחות מקצועיים ופתרון מדויק – בלי לנחש, בלי לשבור, בלי הפתעות, עובדים מסביב לשעון גם בשבתות וחגים, מתחייבים לשירות הטוב ביותר , <span className="font-bold">לא איתרנו, לא שילמתם</span>!
                     </p>
+                    <a href="tel:0526736935" className={filledButton + " m-auto mt-8 block"}>
+                        ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+                    </a>
+                    <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600"}>
+                        לכל הביקורות שלנו באתר מידרג
+                    </a>
                 </div>
 
                 {/* Image Section */}
@@ -114,12 +121,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                                     <li>דוחות מקצועיים לחברות ביטוח</li>
                                 </ul>
                             </div>
+
+                            <a href="tel:0526736935" className={filledButton + " m-auto mt-10 block  text-center"}>
+                                לא בטוחים? לחצו כאן לשיחת יעוץ חינם
+                            </a>
                         </div>
                     </section>
                 </div>
-
-                {/* Contact Section */}
-                <ContactSection />
 
                 {/* Why Us */}
                 <div className="text-center px-6 md:px-20 py-10 relative">
@@ -164,18 +172,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                 <TogglesGenerator questions={items} />
 
                 {/* Testimonial */}
-                <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">
-                    <Image
-                        src="/icons/male-avatar.svg"
-                        width={100}
-                        height={100}
-                        alt="a male avatar outline"
-                        className="shadow-2xl bg-transparent rounded-full"
-                    />
-                    <blockquote className="max-w-2xl mx-auto text-lg italic text-gray-700">
-                        “לא ידענו מאיפה הרטיבות – אקו אינסטלציה הגיעו עם מצלמה תרמית, מצאו את הנזילה בלי לשבור כלום ופתרו את הבעיה. ממליץ!”
-                    </blockquote>
-                    <p className="mt-4 font-bold text-secondary-text">עמית, תל אביב</p>
+                <div className="bg-gray-50  md:px-20 text-center flex flex-col gap-6 justify-center items-center">
+                    <ReviewsSlider />
                 </div>
 
                 {/* CTA */}
