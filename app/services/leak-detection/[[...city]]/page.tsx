@@ -87,7 +87,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     <a href="tel:0526736935" className={filledButton + " m-auto mt-8 block"}>
                         ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
                     </a>
-                    <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600"}>
+                    <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
                         לכל הביקורות שלנו באתר מידרג
                     </a>
                 </div>

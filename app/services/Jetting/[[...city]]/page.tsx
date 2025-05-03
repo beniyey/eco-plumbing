@@ -2,6 +2,8 @@ import ContactSection from "@/sections/contact-section";
 import TogglesGenerator from "@/components/toggles-generator";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
+import ReviewsSlider from "@/sections/reviews";
+import Head from "next/head";
 
 const items = [
   {
@@ -20,11 +22,36 @@ const items = [
       "אנחנו מגיעים במהירות עם ביובית מקצועית, מצלמים את הקו במידת הצורך, פותחים את הסתימה בלחץ מים גבוה ומסיימים בניקוי יסודי."
   },
   {
-    title: "למה לבחור ב-Eco Plumbers?",
+    title: "למה לבחור בנו",
     content:
       "אנחנו זמינים 24/7, עם ביובית מקצועית, צוות מנוסה, שירות מדורג 9.9 במדרג ופתרון בעיות ניקוז בלי ניחושים – אלא עם ציוד חכם."
   }
+  ,
+  {
+    title: "כמה עולה שירות ביובית?",
+    content:
+      "פתיחת סתימה בקו ביוב חיצוני נעה לרוב בין 650 ל-950 ₪ כולל מע״מ. טיפול בשורשים בקווים עמוקים יעלה בין 900 ל-1,200 ₪. המחיר תלוי בגישה, מורכבות וציוד נדרש – נשמח לתת הצעת מחיר טלפונית."
+  },
+  {
+    title: "אם לא הצלחתם לפתור את הבעיה – משלמים?",
+    content:
+      "ממש לא. אם לא פתרנו את הבעיה – לא תחויבו. אנחנו גובים רק על עבודה שמביאה תוצאה, עם אחריות ושקיפות מלאה."
+  }
+
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(({ title, content }) => ({
+    "@type": "Question",
+    "name": title,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": content
+    }
+  }))
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
   let { city }: any = await params
@@ -63,7 +90,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
   const { city } = await params;
   const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
-  return (
+  return (<>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+    </Head>
     <div className="relative overflow-hidden rtl">
       <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
       <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
@@ -74,11 +107,19 @@ export default async function Page({ params }: { params: Promise<{ city?: string
         {/* Hero */}
         <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
-            שירותי ביובית {cityName} <span className="text-secondary-text">במהירות, דיוק וניקיון</span>
+            ביובית <span className="text-secondary-text">{cityName} – פתיחת סתימות בלחץ מים גבוה 24/7</span>
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea">
-            פתיחת סתימות קשות, שורשים בצנרת, שאיבות ובדיקות – עם ציוד ביובית מתקדם, צוות אמין וזמינות מיידית 24/7
+            שירותי ביובית מתקדמים{cityName}  – פתיחת סתימות קשות, שטיפת קווי ביוב בלחץ גבוה, שאיבת הצפות וטיפול בשורשים. אנו משתמשים בציוד מהמתקדמים בישראל וכוללים <strong>צילום קווי ביוב</strong>, <strong>איתור תקלות</strong> ו<strong>דו"ח מקצועי לביטוח</strong> לפי הצורך. <br />
+            <span className="font-bold">התחייבות לשירות מקצועי – לא פתרנו? לא שילמתם.</span><br />
+            זמינות גם בשבתות וחגים.
           </p>
+          <a href="tel:0526736935" className={filledButton + " m-auto mt-8 block"}>
+            ☎️ התקשרו עכשיו וקבלו צילום קו במתנה עם כל שירות: 052-6736935
+          </a>
+          <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
+            ⭐ קראו את הביקורות שלנו באתר מידרג
+          </a>
         </div>
 
         {/* Image Section */}
@@ -110,6 +151,9 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                   <li>שירות חירום 24/7</li>
                 </ul>
               </div>
+              <a href="tel:0526736935" className={filledButton + " m-auto mt-8 block"}>
+                ☎️ אני רוצה שתגיעו!
+              </a>
             </div>
           </section>
         </div>
@@ -130,21 +174,14 @@ export default async function Page({ params }: { params: Promise<{ city?: string
         </div>
 
         {/* FAQ Accordion */}
-        <TogglesGenerator questions={items}/>
+        <TogglesGenerator questions={items} />
+        <a href="tel:0526736935" className={filledButton + " m-auto mt-8 block"}>
+          ☎️ יש לכם עוד שאלות? התקשרו לייעוץ חינם!
+        </a>
 
         {/* Testimonial */}
         <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">
-          <Image
-            src="/icons/male-avatar.svg"
-            width={100}
-            height={100}
-            alt="a male avatar outline"
-            className="shadow-2xl bg-transparent rounded-full"
-          />
-          <blockquote className="max-w-2xl mx-auto text-lg italic text-gray-700">
-            “ביוב עלה באמצע הלילה – Eco Plumbers הגיעו מהר עם ביובית, ניקו את הכל ופתרו את הבעיה מהשורש. שירות ברמה גבוהה!”
-          </blockquote>
-          <p className="mt-4 font-bold text-secondary-text">יניב, הרצליה</p>
+          <ReviewsSlider />
         </div>
 
         {/* CTA */}
@@ -155,13 +192,15 @@ export default async function Page({ params }: { params: Promise<{ city?: string
           <p className="mb-6 text-lg text-primary-text">
             השאר פרטים ונחזור תוך דקות – או התקשר עכשיו ואנחנו מגיעים עם ביובית מקצועית וציוד מתקדם
           </p>
-          <a href="tel:0526736935" className={filledButton}>
-            ☎️ דברו איתנו עכשיו
+          <a href="https://wa.me/972526736935" className={filledButton + " mt-4 bg-green-600"}>
+            💬 שלחו לנו וואטסאפ עכשיו
           </a>
+
         </div>
 
         <ContactSection />
       </div>
     </div>
+  </>
   );
 }
