@@ -72,7 +72,7 @@ export default function RootLayout({
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "אקו אינסטלציה",
+            "name": "אקו פתרונות אינסטלציה",
             "url": "https://www.eco-plumbers.com",
             "logo": "https://www.eco-plumbers.com/favicon.ico",
             "description": "חברת אינסטלציה מתקדמת המספקת שירותים כגון פתיחת סתימות, איתור נזילות, תיקוני צנרת ושיקום ללא הרס, עם שירות מקצועי וזמינות 24/7.",
