@@ -96,6 +96,22 @@ export default async function Page({ params }: { params: Promise<{ city?: string
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "אקו פתרונות אינסטלציה",
+          "image": "https://www.eco-plumbers.com/images/jetter-service.png",
+          "telephone": "+972526736935",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": cityName?.replace("ב", ""),
+            "addressCountry": "IL"
+          },
+          "url": `https://www.eco-plumbers.com/services/jetting/${cityName?.replace("ב", "")}`,
+          "openingHours": "24/7"
+        })
+      }} />
     </Head>
     <div className="relative overflow-hidden rtl">
       <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
