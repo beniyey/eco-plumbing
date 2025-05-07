@@ -10,6 +10,8 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Clarity from '@microsoft/clarity';
+
 
 
 
@@ -27,6 +29,10 @@ const geistMono = Geist_Mono({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"]
 })
+
+const projectId = "rftnbv9c0g"
+
+Clarity.init(projectId);
 
 // app/layout.tsx or app/head.tsx (Next.js App Router)
 export const metadata = {
