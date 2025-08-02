@@ -4,6 +4,7 @@ import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import ReviewsSlider from "@/sections/reviews";
 import Head from "next/head";
+import ConversionLink from "@/components/ConversionLink";
 
 const items = [
   {
@@ -144,13 +145,17 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
             <span className="font-bold">התחייבות לשירות מקצועי – לא פתרנו? לא שילמתם.</span><br />
             זמינות גם בשבתות וחגים.
           </p>
+
+          <ConversionLink
+            href="tel:0526736935"
+            sendTo="AW-17385017560/B-xnCPSPyfcaENih6eFA"
           <a
             href="tel:0526736935"
-            onClick={() => gtag_report_conversion_call('tel:0526736935')}
+
             className={filledButton + " m-auto mt-8 block"}
           >
             ☎️ התקשרו עכשיו וקבלו צילום קו במתנה עם כל שירות: 052-6736935
-          </a>
+          </ConversionLink>
           <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
             ⭐ קראו את הביקורות שלנו באתר מידרג
           </a>
@@ -185,13 +190,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                   <li>שירות חירום 24/7</li>
                 </ul>
               </div>
+              <ConversionLink
+                href="tel:0526736935"
+                sendTo="AW-17385017560/B-xnCPSPyfcaENih6eFA"
               <a
                 href="tel:0526736935"
-                onClick={() => gtag_report_conversion_call('tel:0526736935')}
                 className={filledButton + " m-auto mt-8 block"}
               >
                 ☎️ אני רוצה שתגיעו!
-              </a>
+              </ConversionLink>
             </div>
           </section>
         </div>
@@ -213,13 +220,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
 
         {/* FAQ Accordion */}
         <TogglesGenerator questions={items} />
+        <ConversionLink
+          href="tel:0526736935"
+          sendTo="AW-17385017560/B-xnCPSPyfcaENih6eFA"
         <a
           href="tel:0526736935"
-          onClick={() => gtag_report_conversion_call('tel:0526736935')}
           className={filledButton + " m-auto mt-8 block"}
         >
           ☎️ יש לכם עוד שאלות? התקשרו לייעוץ חינם!
-        </a>
+        </ConversionLink>
 
         {/* Testimonial */}
         <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">
@@ -234,13 +243,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
           <p className="mb-6 text-lg text-primary-text">
             השאר פרטים ונחזור תוך דקות – או התקשר עכשיו ואנחנו מגיעים עם ביובית מקצועית וציוד מתקדם
           </p>
+          <ConversionLink
+            href="https://wa.me/972526736935"
+            sendTo="AW-17385017560/_ZT_CPPR3vsaENih6eFA"
           <a
             href="https://wa.me/972526736935"
-            onClick={() => gtag_report_conversion_whatsapp('https://wa.me/972526736935')}
             className={filledButton + " mt-4 bg-green-600"}
           >
             💬 שלחו לנו וואטסאפ עכשיו
-          </a>
+          </ConversionLink>
 
         </div>
 

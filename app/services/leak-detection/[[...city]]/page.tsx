@@ -3,7 +3,7 @@ import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
 import ReviewsSlider from "@/sections/reviews";
-import Head from "next/head";
+import ConversionLink from "@/components/ConversionLink";
 
 const items = [
     {
@@ -99,13 +99,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea ">
                         מצלמות תרמיות, ציוד אקוסטי, דוחות מקצועיים ופתרון מדויק – בלי לנחש, בלי לשבור, בלי הפתעות, עובדים מסביב לשעון גם בשבתות וחגים, מתחייבים לשירות הטוב ביותר , <span className="font-bold">לא איתרנו, לא שילמתם</span>!
                     </p>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
                     <a
                         href="tel:0526736935"
-                        onClick={() => gtag_report_conversion_call('tel:0526736935')}
                         className={filledButton + " m-auto mt-8 block"}
                     >
                         ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
-                    </a>
+                    </ConversionLink>
                     <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
                         לכל הביקורות שלנו באתר מידרג
                     </a>
@@ -141,13 +143,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                                 </ul>
                             </div>
 
+                            <ConversionLink
+                                href="tel:0526736935"
+                                sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
                             <a
                                 href="tel:0526736935"
-                                onClick={() => gtag_report_conversion_call('tel:0526736935')}
                                 className={filledButton + " m-auto mt-10 block  text-center"}
                             >
                                 לא בטוחים? לחצו כאן לשיחת יעוץ חינם
-                            </a>
+                            </ConversionLink>
                         </div>
                     </section>
                 </div>
@@ -186,13 +190,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                             </div>
                         </div>
                     </section>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
                     <a
                         href="tel:0526736935"
-                        onClick={() => gtag_report_conversion_call('tel:0526736935')}
                         className={filledButton + " m-auto mt-8"}
                     >
                         ☎️ לשיחת ייעוץ חינם חייגו
-                    </a>
+                    </ConversionLink>
                 </div>
 
                 {/* FAQ Accordion */}
@@ -211,13 +217,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                     <p className="mb-6 text-lg text-primary-text">
                         השאר פרטים ונחזור אליך תוך דקות – או התקשר עכשיו ונגיע עם ציוד תרמי לאיתור מיידי
                     </p>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
                     <a
                         href="tel:0526736935"
-                        onClick={() => gtag_report_conversion_call('tel:0526736935')}
                         className={filledButton}
                     >
                         ☎️ דברו איתנו עכשיו
-                    </a>
+                    </ConversionLink>
                 </div>
 
                 <ContactSection />

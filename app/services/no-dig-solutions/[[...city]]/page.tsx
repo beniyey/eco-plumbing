@@ -2,7 +2,7 @@ import ContactSection from "@/sections/contact-section";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
-import Head from "next/head";
+import ConversionLink from "@/components/ConversionLink";
 
 const items = [
   {
@@ -170,13 +170,15 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
           <p className="mb-6 text-lg text-primary-text">
             השאר פרטים ונחזור אליך – או התקשר עכשיו ונתאם ביקור לבדיקה וצילום קו
           </p>
+          <ConversionLink
+            href="tel:0526736935"
+            sendTo="AW-17385017560/kVxnCL--vPcaENih6eFA"
           <a
             href="tel:0526736935"
-            onClick={() => gtag_report_conversion_call('tel:0526736935')}
             className={filledButton}
           >
             ☎️ דברו איתנו עכשיו
-          </a>
+          </ConversionLink>
         </div>
 
         <ContactSection />
