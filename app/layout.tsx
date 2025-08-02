@@ -11,6 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import ClarityInit from "@/components/clarity";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -88,6 +89,18 @@ export default function RootLayout({
             }
           })}
         </script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17385017560');
+          `}
+        </Script>
       </head>
       <body className="relative">
         <Header />
