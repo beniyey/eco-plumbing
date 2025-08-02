@@ -2,6 +2,7 @@ import ContactSection from "@/sections/contact-section";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
+import ConversionLink from "@/components/ConversionLink";
 
 const items = [
   {
@@ -64,6 +65,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
   const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
   return (
+    <>
     <div className="relative overflow-hidden rtl">
       <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
       <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
@@ -155,13 +157,18 @@ export default async function Page({ params }: { params: Promise<{ city?: string
           <p className="mb-6 text-lg text-primary-text">
             השאר פרטים ונחזור אליך – או התקשר עכשיו ונתאם ביקור לבדיקה וצילום קו
           </p>
-          <a href="tel:0526736935" className={filledButton}>
+          <ConversionLink
+            href="tel:0526736935"
+            sendTo="AW-17385017560/kVxnCL--vPcaENih6eFA"
+            className={filledButton}
+          >
             ☎️ דברו איתנו עכשיו
-          </a>
+          </ConversionLink>
         </div>
 
         <ContactSection />
       </div>
     </div>
+    </>
   );
 }

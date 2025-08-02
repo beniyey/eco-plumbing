@@ -3,6 +3,7 @@ import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
 import ReviewsSlider from "@/sections/reviews";
+import ConversionLink from "@/components/ConversionLink";
 
 const items = [
     {
@@ -69,6 +70,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
     const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
     return (
+        <>
         <div className="relative overflow-hidden rtl">
             <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
             <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
@@ -84,9 +86,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea ">
                         מצלמות תרמיות, ציוד אקוסטי, דוחות מקצועיים ופתרון מדויק – בלי לנחש, בלי לשבור, בלי הפתעות, עובדים מסביב לשעון גם בשבתות וחגים, מתחייבים לשירות הטוב ביותר , <span className="font-bold">לא איתרנו, לא שילמתם</span>!
                     </p>
-                    <a href="tel:0526736935" className={filledButton + " m-auto mt-8 block"}>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                        className={filledButton + " m-auto mt-8 block"}
+                    >
                         ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
-                    </a>
+                    </ConversionLink>
                     <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
                         לכל הביקורות שלנו באתר מידרג
                     </a>
@@ -122,9 +128,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                                 </ul>
                             </div>
 
-                            <a href="tel:0526736935" className={filledButton + " m-auto mt-10 block  text-center"}>
+                            <ConversionLink
+                                href="tel:0526736935"
+                                sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                                className={filledButton + " m-auto mt-10 block  text-center"}
+                            >
                                 לא בטוחים? לחצו כאן לשיחת יעוץ חינם
-                            </a>
+                            </ConversionLink>
                         </div>
                     </section>
                 </div>
@@ -163,9 +173,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                             </div>
                         </div>
                     </section>
-                    <a href="tel:0526736935" className={filledButton + " m-auto mt-8"}>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                        className={filledButton + " m-auto mt-8"}
+                    >
                         ☎️ לשיחת ייעוץ חינם חייגו
-                    </a>
+                    </ConversionLink>
                 </div>
 
                 {/* FAQ Accordion */}
@@ -184,13 +198,18 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     <p className="mb-6 text-lg text-primary-text">
                         השאר פרטים ונחזור אליך תוך דקות – או התקשר עכשיו ונגיע עם ציוד תרמי לאיתור מיידי
                     </p>
-                    <a href="tel:0526736935" className={filledButton}>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                        className={filledButton}
+                    >
                         ☎️ דברו איתנו עכשיו
-                    </a>
+                    </ConversionLink>
                 </div>
 
                 <ContactSection />
             </div>
         </div>
+        </>
     );
 }
