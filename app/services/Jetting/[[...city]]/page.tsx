@@ -93,6 +93,17 @@ export default async function Page({ params }: { params: Promise<{ city?: string
 
   return (<>
     <Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17385017560');
+function gtag_report_conversion_whatsapp(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/_ZT_CPPR3vsaENih6eFA','event_callback':callback});return false;}
+function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/B-xnCPSPyfcaENih6eFA','event_callback':callback});return false;}`
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -134,9 +145,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
             <span className="font-bold">התחייבות לשירות מקצועי – לא פתרנו? לא שילמתם.</span><br />
             זמינות גם בשבתות וחגים.
           </p>
+
           <ConversionLink
             href="tel:0526736935"
             sendTo="AW-17385017560/B-xnCPSPyfcaENih6eFA"
+          <a
+            href="tel:0526736935"
+
             className={filledButton + " m-auto mt-8 block"}
           >
             ☎️ התקשרו עכשיו וקבלו צילום קו במתנה עם כל שירות: 052-6736935
@@ -178,6 +193,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
               <ConversionLink
                 href="tel:0526736935"
                 sendTo="AW-17385017560/B-xnCPSPyfcaENih6eFA"
+              <a
+                href="tel:0526736935"
                 className={filledButton + " m-auto mt-8 block"}
               >
                 ☎️ אני רוצה שתגיעו!
@@ -206,6 +223,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
         <ConversionLink
           href="tel:0526736935"
           sendTo="AW-17385017560/B-xnCPSPyfcaENih6eFA"
+        <a
+          href="tel:0526736935"
           className={filledButton + " m-auto mt-8 block"}
         >
           ☎️ יש לכם עוד שאלות? התקשרו לייעוץ חינם!
@@ -227,6 +246,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
           <ConversionLink
             href="https://wa.me/972526736935"
             sendTo="AW-17385017560/_ZT_CPPR3vsaENih6eFA"
+          <a
+            href="https://wa.me/972526736935"
             className={filledButton + " mt-4 bg-green-600"}
           >
             💬 שלחו לנו וואטסאפ עכשיו
