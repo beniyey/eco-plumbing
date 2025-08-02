@@ -2,6 +2,7 @@ import ContactSection from "@/sections/contact-section";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
+import Head from "next/head";
 
 const items = [
   {
@@ -64,6 +65,20 @@ export default async function Page({ params }: { params: Promise<{ city?: string
   const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
 
   return (
+    <>
+    <Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17385017560');
+function gtag_report_conversion_whatsapp(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/iGzDCMnG2vsaENih6eFA','event_callback':callback});return false;}
+function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/kVxnCL--vPcaENih6eFA','event_callback':callback});return false;}`
+        }}
+      />
+    </Head>
     <div className="relative overflow-hidden rtl">
       <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
       <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
@@ -155,7 +170,11 @@ export default async function Page({ params }: { params: Promise<{ city?: string
           <p className="mb-6 text-lg text-primary-text">
             השאר פרטים ונחזור אליך – או התקשר עכשיו ונתאם ביקור לבדיקה וצילום קו
           </p>
-          <a href="tel:0526736935" className={filledButton}>
+          <a
+            href="tel:0526736935"
+            onClick={() => gtag_report_conversion_call('tel:0526736935')}
+            className={filledButton}
+          >
             ☎️ דברו איתנו עכשיו
           </a>
         </div>
@@ -163,5 +182,6 @@ export default async function Page({ params }: { params: Promise<{ city?: string
         <ContactSection />
       </div>
     </div>
+    </>
   );
 }
