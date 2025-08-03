@@ -4,6 +4,7 @@ import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
 import ReviewsSlider from "@/sections/reviews";
 import Head from "next/head";
+import ConversionLink from "@/components/ConversionLink";
 
 const items = [
     {
@@ -71,158 +72,160 @@ export default async function Page({ params }: { params: Promise<{ city?: string
 
     return (
         <>
-        <Head>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `window.dataLayer = window.dataLayer || [];
+            <Head>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-17385017560');
 function gtag_report_conversion_whatsapp(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/8kh_CKCR3_saENih6eFA','event_callback':callback});return false;}
 function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/pZqJCLDbyfcaENih6eFA','event_callback':callback});return false;}`
-                }}
-            />
-        </Head>
-        <div className="relative overflow-hidden rtl">
-            <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
-            <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
-            <div className="absolute -inset-0 -top-10 -right-10 w-40 h-40 bg-primary-text rounded-full opacity-10" />
-            <div className="absolute bottom-10 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10" />
+                    }}
+                />
+            </Head>
+            <div className="relative overflow-hidden rtl">
+                <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
+                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
+                <div className="absolute -inset-0 -top-10 -right-10 w-40 h-40 bg-primary-text rounded-full opacity-10" />
+                <div className="absolute bottom-10 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10" />
 
-            <div className="relative z-10 space-y-4 mt-10">
-                {/* Hero */}
-                <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
-                        רטיבות בקיר? מאתרים את הנזילה בלי לשבור – {cityName} <span className="text-secondary-text">עם דו״ח ביטוח מלא והגעה מיידית!</span>
-                    </h1>
-                    <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea ">
-                        מצלמות תרמיות, ציוד אקוסטי, דוחות מקצועיים ופתרון מדויק – בלי לנחש, בלי לשבור, בלי הפתעות, עובדים מסביב לשעון גם בשבתות וחגים, מתחייבים לשירות הטוב ביותר , <span className="font-bold">לא איתרנו, לא שילמתם</span>!
-                    </p>
-                    <a
-                        href="tel:0526736935"
-                        onClick={() => gtag_report_conversion_call('tel:0526736935')}
-                        className={filledButton + " m-auto mt-8 block"}
-                    >
-                        ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
-                    </a>
-                    <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
-                        לכל הביקורות שלנו באתר מידרג
-                    </a>
-                </div>
+                <div className="relative z-10 space-y-4 mt-10">
+                    {/* Hero */}
+                    <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
+                        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
+                            רטיבות בקיר? מאתרים את הנזילה בלי לשבור – {cityName} <span className="text-secondary-text">עם דו״ח ביטוח מלא והגעה מיידית!</span>
+                        </h1>
+                        <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea ">
+                            מצלמות תרמיות, ציוד אקוסטי, דוחות מקצועיים ופתרון מדויק – בלי לנחש, בלי לשבור, בלי הפתעות, עובדים מסביב לשעון גם בשבתות וחגים, מתחייבים לשירות הטוב ביותר , <span className="font-bold">לא איתרנו, לא שילמתם</span>!
+                        </p>
+                        <ConversionLink
+                            href="tel:0526736935"
+                            sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                            className={filledButton + " m-auto mt-8 block"}
+                        >
+                            ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+                        </ConversionLink>
+                        <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
+                            לכל הביקורות שלנו באתר מידרג
+                        </a>
+                    </div>
 
-                {/* Image Section */}
-                <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center gap-12 items-center lg:flex-row-reverse lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
-                    <Image
-                        src="/images/leak-detection.png"
-                        alt="איתור נזילות"
-                        width={500}
-                        height={500}
-                        className="rounded-2xl shadow-2xl border-4 border-secondary-text aspect-square object-cover"
-                    />
+                    {/* Image Section */}
+                    <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center gap-12 items-center lg:flex-row-reverse lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
+                        <Image
+                            src="/images/leak-detection.png"
+                            alt="איתור נזילות"
+                            width={500}
+                            height={500}
+                            className="rounded-2xl shadow-2xl border-4 border-secondary-text aspect-square object-cover"
+                        />
 
-                    {/* Text Section */}
-                    <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
-                        <div className="max-w-5xl mx-auto">
-                            <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">איך מזהים נזילה?</h2>
+                        {/* Text Section */}
+                        <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
+                            <div className="max-w-5xl mx-auto">
+                                <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">איך מזהים נזילה?</h2>
 
-                            <div className="space-y-6 text-lg leading-relaxed">
-                                <p>
-                                    חשבון מים שקפץ? כתמי רטיבות? לחץ מים נמוך? כל אלו עלולים להעיד על נזילה – חשוב לטפל מיד לפני שהנזק מחמיר.
-                                </p>
+                                <div className="space-y-6 text-lg leading-relaxed">
+                                    <p>
+                                        חשבון מים שקפץ? כתמי רטיבות? לחץ מים נמוך? כל אלו עלולים להעיד על נזילה – חשוב לטפל מיד לפני שהנזק מחמיר.
+                                    </p>
 
-                                <h3 className="text-xl font-semibold mt-8">מה כוללים השירותים שלנו?</h3>
-                                <ul className="list-disc pr-5 space-y-2 mt-3 text-base">
-                                    <li>איתור נזילות באמצעים טכנולוגיים</li>
-                                    <li>בדיקות לחץ בצנרת</li>
-                                    <li>איתור רטיבות בקירות ובתקרה</li>
-                                    <li>גלאי רטיבות אקוסטיים</li>
-                                    <li>דוחות מקצועיים לחברות ביטוח</li>
-                                </ul>
-                            </div>
+                                    <h3 className="text-xl font-semibold mt-8">מה כוללים השירותים שלנו?</h3>
+                                    <ul className="list-disc pr-5 space-y-2 mt-3 text-base">
+                                        <li>איתור נזילות באמצעים טכנולוגיים</li>
+                                        <li>בדיקות לחץ בצנרת</li>
+                                        <li>איתור רטיבות בקירות ובתקרה</li>
+                                        <li>גלאי רטיבות אקוסטיים</li>
+                                        <li>דוחות מקצועיים לחברות ביטוח</li>
+                                    </ul>
+                                </div>
 
-                            <a
-                                href="tel:0526736935"
-                                onClick={() => gtag_report_conversion_call('tel:0526736935')}
-                                className={filledButton + " m-auto mt-10 block  text-center"}
-                            >
+                                <ConversionLink
+                                    href="tel:0526736935"
+                                    sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                                    className={filledButton + " m-auto mt-8 block"}
+                                >
+                                    ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+                                </ConversionLink>
                                 לא בטוחים? לחצו כאן לשיחת יעוץ חינם
-                            </a>
-                        </div>
-                    </section>
-                </div>
 
-                {/* Why Us */}
-                <div className="text-center px-6 md:px-20 py-10 relative">
-                    <div className="absolute top-10 -left-20 w-60 h-60 bg-secondary-text rounded-full opacity-20" />
-                    <div className="absolute -bottom-10 -right-20 w-40 h-40 bg-primary-text rounded-full opacity-20" />
-
-                    <h2 className="text-2xl md:text-3xl font-bold mb-6">למה לבחור בנו?</h2>
-                    <ul className="max-w-3xl mx-auto space-y-3 text-right text-lg">
-                        <li>✅ מצלמות תרמיות וציוד מתקדם</li>
-                        <li>✅ פתרונות מדויקים וללא הרס</li>
-                        <li>✅ דוחות מקצועיים לחברות ביטוח</li>
-                        <li>✅ זמינות מהירה כולל סופי שבוע</li>
-                        <li>✅ שירות אישי, נקי ואחראי</li>
-                    </ul>
-                </div>
-
-                {/* נזקי נזילות ומחיר */}
-                <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center items-center lg:flex-row lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
-                    <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
-                        <div className="max-w-5xl mx-auto">
-                            <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מה קורה אם לא מטפלים בנזילה?</h2>
-                            <div className="space-y-6 text-lg leading-relaxed">
-                                <p>
-                                    נזילה שלא מטופלת בזמן עלולה לגרום לנזק מצטבר: רטיבות בתקרה, קירות שמתפוררים, עובש וריח טחב שמזיקים לבריאות, והחמרה של הבעיה עד לפגיעה בתשתיות. לפעמים הנזק יתגלה רק כשהוא כבר גדול – או כששכנים יתלוננו על טפטוף.
-                                </p>
-                                <p>
-                                    ככל שממתינים יותר – הנזק גדל. טיפול מוקדם חוסך כסף, תיקונים יקרים ועוגמת נפש. אנחנו ב"אקו אינסטלציה" מאתרים את הנזילה במהירות ומונעים החמרה מיותרת.
-                                </p>
-                                <h3 className="text-xl font-semibold mt-8">מה המחיר?</h3>
-                                <p>
-                                    מחיר איתור נזילה מתחיל מ-₪800 לביקור הכולל צילום תרמי, בדיקות לחץ ודוח מסודר – בהתאם לסוג המקרה. התקשרו ונשמח לתת הצעת מחיר מותאמת.
-                                </p>
                             </div>
-                        </div>
-                    </section>
-                    <a
-                        href="tel:0526736935"
-                        onClick={() => gtag_report_conversion_call('tel:0526736935')}
-                        className={filledButton + " m-auto mt-8"}
-                    >
-                        ☎️ לשיחת ייעוץ חינם חייגו
-                    </a>
+                        </section>
+                    </div>
+
+                    {/* Why Us */}
+                    <div className="text-center px-6 md:px-20 py-10 relative">
+                        <div className="absolute top-10 -left-20 w-60 h-60 bg-secondary-text rounded-full opacity-20" />
+                        <div className="absolute -bottom-10 -right-20 w-40 h-40 bg-primary-text rounded-full opacity-20" />
+
+                        <h2 className="text-2xl md:text-3xl font-bold mb-6">למה לבחור בנו?</h2>
+                        <ul className="max-w-3xl mx-auto space-y-3 text-right text-lg">
+                            <li>✅ מצלמות תרמיות וציוד מתקדם</li>
+                            <li>✅ פתרונות מדויקים וללא הרס</li>
+                            <li>✅ דוחות מקצועיים לחברות ביטוח</li>
+                            <li>✅ זמינות מהירה כולל סופי שבוע</li>
+                            <li>✅ שירות אישי, נקי ואחראי</li>
+                        </ul>
+                    </div>
+
+                    {/* נזקי נזילות ומחיר */}
+                    <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center items-center lg:flex-row lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
+                        <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
+                            <div className="max-w-5xl mx-auto">
+                                <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מה קורה אם לא מטפלים בנזילה?</h2>
+                                <div className="space-y-6 text-lg leading-relaxed">
+                                    <p>
+                                        נזילה שלא מטופלת בזמן עלולה לגרום לנזק מצטבר: רטיבות בתקרה, קירות שמתפוררים, עובש וריח טחב שמזיקים לבריאות, והחמרה של הבעיה עד לפגיעה בתשתיות. לפעמים הנזק יתגלה רק כשהוא כבר גדול – או כששכנים יתלוננו על טפטוף.
+                                    </p>
+                                    <p>
+                                        ככל שממתינים יותר – הנזק גדל. טיפול מוקדם חוסך כסף, תיקונים יקרים ועוגמת נפש. אנחנו ב"אקו אינסטלציה" מאתרים את הנזילה במהירות ומונעים החמרה מיותרת.
+                                    </p>
+                                    <h3 className="text-xl font-semibold mt-8">מה המחיר?</h3>
+                                    <p>
+                                        מחיר איתור נזילה מתחיל מ-₪800 לביקור הכולל צילום תרמי, בדיקות לחץ ודוח מסודר – בהתאם לסוג המקרה. התקשרו ונשמח לתת הצעת מחיר מותאמת.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <ConversionLink
+                            href="tel:0526736935"
+                            sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                            className={filledButton + " m-auto mt-8 block"}
+                        >
+                            ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+                        </ConversionLink>
+                    </div>
+
+                    {/* FAQ Accordion */}
+                    <TogglesGenerator questions={items} />
+
+                    {/* Testimonial */}
+                    <div className="bg-gray-50  md:px-20 text-center flex flex-col gap-6 justify-center items-center">
+                        <ReviewsSlider />
+                    </div>
+
+                    {/* CTA */}
+                    <div className="text-center py-12 bg-secondary text-white px-6">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-text">
+                            חושד בנזילה? <span className="text-secondary-text">תן לנו לבדוק</span>
+                        </h3>
+                        <p className="mb-6 text-lg text-primary-text">
+                            השאר פרטים ונחזור אליך תוך דקות – או התקשר עכשיו ונגיע עם ציוד תרמי לאיתור מיידי
+                        </p>
+                        <ConversionLink
+                            href="tel:0526736935"
+                            sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                            className={filledButton + " m-auto mt-8 block"}
+                        >
+                            ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+                        </ConversionLink>
+                    </div>
+
+                    <ContactSection />
                 </div>
-
-                {/* FAQ Accordion */}
-                <TogglesGenerator questions={items} />
-
-                {/* Testimonial */}
-                <div className="bg-gray-50  md:px-20 text-center flex flex-col gap-6 justify-center items-center">
-                    <ReviewsSlider />
-                </div>
-
-                {/* CTA */}
-                <div className="text-center py-12 bg-secondary text-white px-6">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-text">
-                        חושד בנזילה? <span className="text-secondary-text">תן לנו לבדוק</span>
-                    </h3>
-                    <p className="mb-6 text-lg text-primary-text">
-                        השאר פרטים ונחזור אליך תוך דקות – או התקשר עכשיו ונגיע עם ציוד תרמי לאיתור מיידי
-                    </p>
-                    <a
-                        href="tel:0526736935"
-                        onClick={() => gtag_report_conversion_call('tel:0526736935')}
-                        className={filledButton}
-                    >
-                        ☎️ דברו איתנו עכשיו
-                    </a>
-                </div>
-
-                <ContactSection />
             </div>
-        </div>
         </>
     );
 }
