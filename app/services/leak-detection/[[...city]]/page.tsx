@@ -71,6 +71,19 @@ export default async function Page({ params }: { params: Promise<{ city?: string
 
     return (
         <>
+        <Head>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17385017560');
+function gtag_report_conversion_whatsapp(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/8kh_CKCR3_saENih6eFA','event_callback':callback});return false;}
+function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/pZqJCLDbyfcaENih6eFA','event_callback':callback});return false;}`
+                }}
+            />
+        </Head>
         <div className="relative overflow-hidden rtl">
             <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
             <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
@@ -89,6 +102,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     <ConversionLink
                         href="tel:0526736935"
                         sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                    <a
+                        href="tel:0526736935"
                         className={filledButton + " m-auto mt-8 block"}
                     >
                         ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
@@ -131,6 +146,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                             <ConversionLink
                                 href="tel:0526736935"
                                 sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                            <a
+                                href="tel:0526736935"
                                 className={filledButton + " m-auto mt-10 block  text-center"}
                             >
                                 לא בטוחים? לחצו כאן לשיחת יעוץ חינם
@@ -176,6 +193,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     <ConversionLink
                         href="tel:0526736935"
                         sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                    <a
+                        href="tel:0526736935"
                         className={filledButton + " m-auto mt-8"}
                     >
                         ☎️ לשיחת ייעוץ חינם חייגו
@@ -201,6 +220,8 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     <ConversionLink
                         href="tel:0526736935"
                         sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+                    <a
+                        href="tel:0526736935"
                         className={filledButton}
                     >
                         ☎️ דברו איתנו עכשיו
