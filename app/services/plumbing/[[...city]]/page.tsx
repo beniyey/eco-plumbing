@@ -2,6 +2,8 @@ import ContactSection from "@/sections/contact-section";
 import Image from "next/image";
 import { filledButton } from "@/components/buttons";
 import TogglesGenerator from "@/components/toggles-generator";
+import ConversionLink from "@/components/ConversionLink";
+import ReviewsSlider from "@/sections/reviews";
 
 const items = [
     {
@@ -29,35 +31,35 @@ const items = [
 export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
     let { city }: any = await params
     city = city ? decodeURIComponent(city[0]) : "באזורכם";
-  
+
     const title = `אינסטלטור ${city} | שירותי אינסטלציה כלליים 24/7`;
     const description = `אינסטלטור מקצועי ${city} – תיקוני צנרת, התקנות, החלפות, לחץ מים נמוך, דודי שמש, פתיחת סתימות ועוד. זמינות מיידית עם אחריות מלאה. אקו אינסטלציה.`;
-  
+
     const image = "https://www.eco-plumbers.com/images/plumber.webp"; // ודא שקיים
-  
+
     return {
-      title,
-      description,
-      openGraph: {
         title,
         description,
-        url: `https://www.eco-plumbers.com/services/plumbing/${city}`,
-        type: "website",
-        images: [{ url: image, width: 1200, height: 630, alt: title }]
-      },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description,
-        images: [image]
-      },
-      alternates: {
-        canonical: `https://www.eco-plumbers.com/services/plumbing/${city}`
-      },
-      metadataBase: new URL("https://www.eco-plumbers.com")
+        openGraph: {
+            title,
+            description,
+            url: `https://www.eco-plumbers.com/services/plumbing/${city}`,
+            type: "website",
+            images: [{ url: image, width: 1200, height: 630, alt: title }]
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [image]
+        },
+        alternates: {
+            canonical: `https://www.eco-plumbers.com/services/plumbing/${city}`
+        },
+        metadataBase: new URL("https://www.eco-plumbers.com")
     };
-  }
-  
+}
+
 
 export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
     const { city } = await params;
@@ -74,11 +76,21 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                 {/* Hero */}
                 <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
                     <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
-                        שירותי אינסטלציה כללית {cityName} <span className="text-secondary-text">ברמה הגבוהה ביותר</span>
+                        שירותי אינסטלציה לבית ולעסק {cityName} <span className="text-secondary-text">עם מענה מידי, וזמינות בכל שעות היום</span>
                     </h1>
                     <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea">
-                        כל עבודות האינסטלציה לבית ולעסק – התקנות, תיקונים, החלפות וחירום – עם אחריות מלאה, שירות אישי וציוד מתקדם
+                        כל עבודות האינסטלציה לבית ולעסק – התקנות, תיקונים, החלפות ופתרון תקלות חירום – עם אחריות מלאה, יחס אישי, הגעה מהירה וציוד מתקדם.
                     </p>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/wphUCNue_IMbENih6eFA"
+                        className={filledButton + " m-auto mt-8 block"}
+                    >
+                        ☎️ צריכים אינסטלטור מיידי? התקשרו - 052-6736935
+                    </ConversionLink>
+                    <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
+                        ⭐ קראו את הביקורות עלינו באתר מידרג
+                    </a>
                 </div>
 
                 {/* Image Section */}
@@ -94,7 +106,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                     {/* Text Section */}
                     <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
                         <div className="max-w-5xl mx-auto">
-                            <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מתי להזמין אינסטלטור?</h2>
+                            <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מתי להזמין אותנו?</h2>
 
                             <div className="space-y-6 text-lg leading-relaxed">
                                 <p>
@@ -111,6 +123,7 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                                     <li>שירות חירום בכל שעה</li>
                                 </ul>
                             </div>
+
                         </div>
                     </section>
                 </div>
@@ -128,6 +141,13 @@ export default async function Page({ params }: { params: Promise<{ city?: string
                         <li>✅ אחריות מלאה על כל עבודה</li>
                         <li>✅ מחירים שקופים והוגנים</li>
                     </ul>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/wphUCNue_IMbENih6eFA"
+                        className={filledButton + " m-auto mt-8 block"}
+                    >
+                        אני צריך אתכם!
+                    </ConversionLink>
                 </div>
 
                 {/* FAQ Accordion */}
@@ -135,30 +155,32 @@ export default async function Page({ params }: { params: Promise<{ city?: string
 
                 {/* Testimonial */}
                 <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">
-                    <Image
-                        src="/icons/male-avatar.svg"
-                        width={100}
-                        height={100}
-                        alt="a male avatar outline"
-                        className="shadow-2xl bg-transparent rounded-full"
-                    />
-                    <blockquote className="max-w-2xl mx-auto text-lg italic text-gray-700">
-                        “היו לי נזילות בכמה מקומות בבית. Eco Plumbers הגיעו בזמן, תיקנו ביעילות והשאירו הכל נקי. שירות מדהים!”
-                    </blockquote>
-                    <p className="mt-4 font-bold text-secondary-text">דוד, כפר סבא</p>
+                    <ReviewsSlider />
                 </div>
 
                 {/* CTA */}
                 <div className="text-center py-12 bg-secondary text-white px-6">
                     <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-text">
-                        צריך אינסטלטור עכשיו? <span className="text-secondary-text">אנחנו כאן בשבילך</span>
+                        צריכים אינסטלטור עכשיו? <span className="text-secondary-text">אנחנו כאן בשבילך</span>
                     </h3>
                     <p className="mb-6 text-lg text-primary-text">
-                        השאר פרטים ונחזור אליך מייד – או התקשר ונגיע לטפל בבעיה בצורה מקצועית
+                        שלחו לנו הודעה בווטסאפ, או חייגו - והצוות שלנו כבר בדרך אליכם
                     </p>
-                    <a href="tel:0526736935" className={filledButton}>
-                        ☎️ דברו איתנו עכשיו
-                    </a>
+                    <ConversionLink
+                        href="tel:0526736935"
+                        sendTo="AW-17385017560/wphUCNue_IMbENih6eFA"
+                        className={filledButton + " m-auto mt-8 block"}
+                    >
+                        דברו איתנו עכשיו ☎️
+                    </ConversionLink>
+
+                    <ConversionLink
+                        href="https://api.whatsapp.com/send?phone=972526736935"
+                        sendTo="AW-17385017560/L2RQCNKN_IMbENih6eFA"
+                        className={filledButton + " m-auto mt-8 block"}
+                    >
+                        שילחו לנו הודעה
+                    </ConversionLink>
                 </div>
 
                 <ContactSection />
