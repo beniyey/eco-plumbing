@@ -108,7 +108,7 @@ export default function RootLayout({
           target="blank"
           href="https://api.whatsapp.com/send?phone=972526736935"
           title="שלחו לנו הודעה"
-          className="fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50"
+          className="fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50 hover:scale-105"
         >
           <Image
             src={"/whatsapp-svgrepo-com.svg"}

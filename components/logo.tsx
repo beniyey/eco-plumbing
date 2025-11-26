@@ -8,7 +8,7 @@ interface Props {
 export default function Logo(props: Props) {
     return (
         <Link href={"/"}>
-            <svg className='filter-black' xmlns="http://www.w3.org/2000/svg" width={props.width ?? 70} version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" >
+            <svg className='filter-black hover:filter-none' xmlns="http://www.w3.org/2000/svg" width={props.width ?? 70} version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" >
                 <g>
                     <g>
                         <g>
