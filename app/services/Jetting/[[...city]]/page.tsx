@@ -29,11 +29,6 @@ const items = [
   }
   ,
   {
-    title: "כמה עולה שירות ביובית?",
-    content:
-      "פתיחת סתימה בקו ביוב חיצוני נעה לרוב בין 650 ל-950 ₪ כולל מע״מ. טיפול בשורשים בקווים עמוקים יעלה בין 900 ל-1,200 ₪. המחיר תלוי בגישה, מורכבות וציוד נדרש – נשמח לתת הצעת מחיר טלפונית."
-  },
-  {
     title: "אם לא הצלחתם לפתור את הבעיה – משלמים?",
     content:
       "ממש לא. אם לא פתרנו את הבעיה – לא תחויבו. אנחנו גובים רק על עבודה שמביאה תוצאה, עם אחריות ושקיפות מלאה."
@@ -138,10 +133,10 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
         {/* Hero */}
         <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
-            ביובית <span className="text-secondary-text">{cityName} – פתיחת סתימות בלחץ מים גבוה 24/7</span>
+            השורשים שוב סתמו את הצינור? <span className="text-secondary-text">{cityName} – ביובית 24/7</span>
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea">
-            שירותי ביובית מתקדמים{cityName}  – פתיחת סתימות קשות, שטיפת קווי ביוב בלחץ גבוה, שאיבת הצפות וטיפול בשורשים. אנו משתמשים בציוד מהמתקדמים בישראל וכוללים <strong>צילום קווי ביוב</strong>, <strong>איתור תקלות</strong> ו<strong>דו"ח מקצועי לביטוח</strong> לפי הצורך. <br />
+            שירותי ביובית מתקדמים{cityName}  – פתיחת סתימות קשות, כרסום בטון בקווים, שטיפת קווי ביוב בלחץ גבוה, שאיבת הצפות וטיפול בשורשים. אנו משתמשים בציוד מהמתקדמים בישראל וכוללים <strong>צילום קווי ביוב</strong>, <strong>איתור תקלות</strong> ו<strong>דו"ח מקצועי לביטוח</strong> לפי הצורך. <br />
             <span className="font-bold">התחייבות לשירות מקצועי – לא פתרנו? לא שילמתם.</span><br />
             זמינות גם בשבתות וחגים.
           </p>
@@ -150,7 +145,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
             sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
             className={filledButton + " m-auto mt-8 block"}
           >
-            ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+            ☎️ צריכים שנגיע עוד היום? התקשרו - 052-6736935
           </ConversionLink>
           <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
             ⭐ קראו את הביקורות שלנו באתר מידרג
@@ -173,16 +168,16 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
               <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מתי צריך להזמין ביובית?</h2>
 
               <div className="space-y-6 text-lg leading-relaxed">
-                <p>
-                  הצפה? ריח רע מהביוב? סתימה חוזרת בקו ראשי? ביובית היא הפתרון הכי מקצועי ואפקטיבי – פותחת, שוטפת ומנקה ביסודיות.
+                <p className=" text-center font-semibold">
+                  אם יש לכם סתימה או שהשורשים שוב חזרו ואי אפשר להוריד את המים ללא חרדה, זה הזמן להזמין אותנו, אנחנו נבצע צילום, פתיחת סתימה וטיפול מקיף לבעייה, כך שהיא תפסיק ויהיה לכם שקט נפשי לשנים קדימה
                 </p>
 
                 <h3 className="text-xl font-semibold mt-8">מה כוללים השירותים שלנו?</h3>
                 <ul className="list-disc pr-5 space-y-2 mt-3 text-base">
+                  <li>כרסום שורשים ותיקון למניעת חזרתם</li>
                   <li>פתיחת סתימות בלחץ מים גבוה</li>
-                  <li>שאיבת בורות ביוב</li>
-                  <li>טיפול בשורשים בקווים</li>
-                  <li>צילום קווי ביוב עם מצלמה</li>
+                  <li>צילום קווי ביוב על ידי מצלמת 460 מעלות</li>
+                  <li>כרסום בטון בקווי ביוב</li>
                   <li>שירות חירום 24/7</li>
                 </ul>
               </div>
@@ -191,7 +186,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                 sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
                 className={filledButton + " m-auto mt-8 block"}
               >
-                ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+                ☎️ להצעת מחיר והגעה מיידית? התקשרו
               </ConversionLink>
             </div>
           </section>
@@ -219,7 +214,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
           sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
           className={filledButton + " m-auto mt-8 block"}
         >
-          ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+          ☎️ רוצים שנגיע עוד היום? התקשרו
         </ConversionLink>
 
         {/* Testimonial */}
@@ -240,7 +235,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
             sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
             className={filledButton + " m-auto mt-8 block"}
           >
-            ☎️ רוצים שנאתר את הנזילה עוד היום? התקשרו - 052-6736935
+            ☎️ התקשרו
           </ConversionLink>
 
         </div>
