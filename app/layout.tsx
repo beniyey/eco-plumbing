@@ -12,6 +12,8 @@ import Image from "next/image";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import ClarityInit from "@/components/clarity";
 import Script from "next/script";
+import ConversionLink from "@/components/ConversionLink";
+import { filledButton } from "@/components/buttons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,20 +106,13 @@ export default function RootLayout({
       </head>
       <body className="relative">
         <Header />
-        <Link
-          target="blank"
-          href="https://api.whatsapp.com/send?phone=972526736935"
-          title="שלחו לנו הודעה"
-          className="fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50 hover:scale-105"
+        <ConversionLink
+          href="tel:0526736935"
+          sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
+          className={filledButton + " fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50 hover:scale-105"}
         >
-          <Image
-            src={"/whatsapp-svgrepo-com.svg"}
-            height={60}
-            width={60}
-            alt="a logo of whatsapp"
-            className="w-16"
-          />
-        </Link>
+          התקשרו
+        </ConversionLink>
 
         <Suspense fallback={<p>loading...</p>}>
           {children}
@@ -130,3 +125,4 @@ export default function RootLayout({
     </html>
   );
 }
+

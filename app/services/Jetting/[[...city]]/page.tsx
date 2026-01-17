@@ -145,8 +145,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
             sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
             className={filledButton + " m-auto mt-8 block"}
           >
-            ☎️ צריכים שנגיע עוד היום? התקשרו - 052-6736935
-          </ConversionLink>
+            התקשרו עכשיו!           </ConversionLink>
           <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
             ⭐ קראו את הביקורות שלנו באתר מידרג
           </a>
@@ -186,8 +185,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
                 sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
                 className={filledButton + " m-auto mt-8 block"}
               >
-                ☎️ להצעת מחיר והגעה מיידית? התקשרו
-              </ConversionLink>
+                התקשרו עכשיו!              </ConversionLink>
             </div>
           </section>
         </div>
@@ -214,8 +212,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
           sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
           className={filledButton + " m-auto mt-8 block"}
         >
-          ☎️ רוצים שנגיע עוד היום? התקשרו
-        </ConversionLink>
+          התקשרו עכשיו!        </ConversionLink>
 
         {/* Testimonial */}
         <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">
@@ -235,8 +232,7 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
             sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
             className={filledButton + " m-auto mt-8 block"}
           >
-            ☎️ התקשרו
-          </ConversionLink>
+            התקשרו עכשיו!          </ConversionLink>
 
         </div>
 
@@ -246,3 +242,4 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
   </>
   );
 }
+
