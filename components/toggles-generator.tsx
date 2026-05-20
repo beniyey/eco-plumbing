@@ -18,17 +18,17 @@ export default function TogglesGenerator({ questions }: Props) {
             {/* decoration circles */}
             <div className="absolute bottom-0 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10"></div>
 
-            <h2 className="text-3xl text-center font-bold mt-6">שאלות נפוצות</h2>
+            <h2 className="text-3xl text-center font-bold mt-6 text-primary-text">שאלות נפוצות</h2>
             {questions.map((item, index) => (
-                <div key={index} className="border-2 border-gray-250 rounded-md overflow-hidden">
+                <div key={index} className="border border-primary-sea/15 rounded-xl overflow-hidden shadow-sm bg-white">
                     <button
-                        className="w-full text-right px-4 py-4 bg-gray-100 hover:bg-gray-200 font-semibold flex justify-between items-center"
+                        className="w-full text-right px-5 py-4 bg-white hover:bg-primary-sea/5 font-semibold flex justify-between items-center gap-4 transition-colors"
                         onClick={() => toggle(index)}
                     >
-                        <span className={openIndex === index ? "text-primary-sea" : ""}>
+                        <span className={openIndex === index ? "text-primary-sea" : "text-primary-text"}>
                             {item.title}
                         </span>
-                        <span>{openIndex === index ? "−" : "+"}</span>
+                        <span className={`shrink-0 flex h-8 w-8 items-center justify-center rounded-full text-lg font-light ${openIndex === index ? "bg-primary-sea text-white" : "bg-primary-sea/10 text-primary-sea"}`}>{openIndex === index ? "−" : "+"}</span>
                     </button>
                     <div
                         className={`transition-all duration-300 overflow-hidden ${openIndex === index

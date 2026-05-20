@@ -1,62 +1,212 @@
-import ContactSection from "@/sections/contact-section";
 import TogglesGenerator from "@/components/toggles-generator";
-import Image from "next/image";
-import { filledButton } from "@/components/buttons";
+import JettingHero from "@/components/landing/jetting-hero";
+import CtaGroup from "@/components/landing/cta-group";
+import FadeInSection from "@/components/landing/fade-in-section";
+import PackageOffers from "@/components/landing/package-offers";
+import ProblemCards from "@/components/landing/problem-cards";
+import SectionHeading from "@/components/landing/section-heading";
+import { IconCheck, IconStar } from "@/components/landing/landing-icons";
 import ReviewsSlider from "@/sections/reviews";
-import Head from "next/head";
-import ConversionLink from "@/components/ConversionLink";
+import Image from "next/image";
 
-const items = [
-  {
-    title: "מה זה שירות ביובית?",
-    content:
-      "שירות ביובית הוא פתרון מתקדם לפתיחת סתימות וניקוי קווי ביוב בעזרת לחץ מים גבוה. הביובית מאפשרת גם שאיבת הצפות, ושורשים בצנרת."
-  },
-  {
-    title: "מתי צריך להזמין ביובית?",
-    content:
-      "כאשר קיימת סתימה מורכבת בקו ראשי, הצפה או חדירת שורשים – ביובית תטפל בבעיה בצורה יסודית ומהירה, בלי לפגוע בתשתיות."
-  },
-  {
-    title: "איך השירות שלנו עובד?",
-    content:
-      "אנחנו מגיעים במהירות עם ביובית מקצועית, מצלמים את הקו במידת הצורך, פותחים את הסתימה בלחץ מים גבוה ומסיימים בניקוי יסודי."
-  },
-  {
-    title: "למה לבחור בנו",
-    content:
-      "אנחנו זמינים 24/7, עם ביובית מקצועית, צוות מנוסה, שירות מדורג 9.9 במדרג ופתרון בעיות ניקוז בלי ניחושים – אלא עם ציוד חכם."
-  }
-  ,
-  {
-    title: "אם לא הצלחתם לפתור את הבעיה – משלמים?",
-    content:
-      "ממש לא. אם לא פתרנו את הבעיה – לא תחויבו. אנחנו גובים רק על עבודה שמביאה תוצאה, עם אחריות ושקיפות מלאה."
-  }
+const PHONE_DISPLAY = "052-6736935";
+const SITE = "https://www.eco-plumbers.com";
+const HERO_IMAGE = "/images/jetter-service.png";
 
+const problems = [
+  {
+    title: "סתימות חוזרות",
+    icon: "refresh" as const,
+    desc: "פתיחה זמנית לא פותרת — לרוב יש גורם עמוק בקו שחוזר על עצמו.",
+  },
+  {
+    title: "שורשים בצנרת",
+    icon: "leaf" as const,
+    desc: "חדירת שורשים שסותמת את הקו ודורשת טיפול ממוקד, לא רק שטיפה.",
+  },
+  {
+    title: "ריח ביוב",
+    icon: "wind" as const,
+    desc: "ריח מתמשך לרוב מצביע על הצטברות, שבר או בעיה בקו הביוב.",
+  },
+  {
+    title: "מים שעולים במקלחת / אסלה",
+    icon: "droplets" as const,
+    desc: "הצפה או גובה מים — סימן לסתימה קרובה או חסימה בקו.",
+  },
+  {
+    title: "זרימה איטית",
+    icon: "slow" as const,
+    desc: "ניקוז חלש לפני סתימה מלאה — כדאי לטפל לפני שנסגר הקו.",
+  },
+  {
+    title: "חשד לשבר או שיפוע לא תקין",
+    icon: "alert" as const,
+    desc: "צילום קו עוזר לאשר שבר, שיפוע או נזק לפני תיקון יקר.",
+  },
+];
+
+const packages = [
+  {
+    name: "פתיחת סתימה בסיסית",
+    price: "החל מ־400–650 ₪ + מע״מ",
+    desc: "מתאים לסתימות בכיור, מקלחת או אסלה בגישה נוחה.",
+    recommended: false,
+  },
+  {
+    name: "פתיחת סתימה בקו ביוב",
+    price: "החל מ־600 ₪ + מע״מ",
+    desc: "מתאים לקו חיצוני או קו ראשי, בהתאם לגישה ולמורכבות.",
+    recommended: false,
+  },
+  {
+    name: "פתיחת סתימה + צילום קו",
+    price: "החל מ־1,200 ₪ + מע״מ",
+    desc: "מתאים במיוחד לסתימות חוזרות, חשד לשורשים, שבר או שיפוע לא תקין.",
+    recommended: true,
+  },
+  {
+    name: "טיפול שורשים + שטיפה + צילום",
+    price: "החל מ־1,200–2,500 ₪ + מע״מ",
+    desc: "מתאים לקווים עם שורשים, הצפות חוזרות או צורך באבחון מקצועי.",
+    recommended: false,
+  },
+  {
+    name: "צילום קו ביוב בלבד",
+    price: "החל מ־900–1,500 ₪ + מע״מ",
+    desc: "כולל בדיקת מצב הצנרת והמלצה מקצועית להמשך טיפול.",
+    recommended: false,
+  },
+];
+
+const whyUs = [
+  "עובדים עם מצלמות ביוב וציוד מתקדם",
+  "לא רק פותחים סתימה — מאתרים את הגורם",
+  "ניסיון בטיפול בשורשים וסתימות מורכבות",
+  "אפשרות לצילום לפני/אחרי",
+  "פתרונות ללא הרס",
+  "שירות מקצועי, מסודר ושקוף",
+];
+
+const processSteps = [
+  "שיחה קצרה להבנת התקלה",
+  "הגעה ובדיקת גישה",
+  "פתיחת הסתימה או צילום הקו",
+  "זיהוי מקור הבעיה",
+  "הצעת פתרון ברור להמשך",
+  "במידת הצורך — צילום לפני/אחרי ותיעוד",
+];
+
+const galleryItems = [
+  {
+    src: "/images/jetter-service.png",
+    alt: "ציוד שטיפה ופתיחת סתימות מקצועי",
+    label: "ציוד עבודה מתקדם",
+  },
+  {
+    src: "/images/drain-cleaning-service.png",
+    alt: "פתיחת סתימה מקצועית",
+    label: "לפני ואחרי פתיחת סתימה",
+  },
+  {
+    src: "/images/plumber-working.jpg",
+    alt: "עבודת אינסטלציה מקצועית",
+    label: "צוות מקצועי בשטח",
+  },
+  {
+    src: "/images/quality-control.jpg",
+    alt: "בדיקת קווי ביוב",
+    label: "צילום ואבחון קווי ביוב",
+  },
+];
+
+const serviceAreas = [
+  "הרצליה",
+  "רעננה",
+  "כפר סבא",
+  "הוד השרון",
+  "נתניה",
+  "קדימה",
+  "תל אביב והסביבה",
+];
+
+const faqItems = [
+  {
+    title: "כמה עולה פתיחת סתימה?",
+    content:
+      "המחיר מתחיל בדרך כלל מ־400–650 ₪ + מע״מ לסתימות פשוטות, ועולה בהתאם למורכבות, גישה, שעת הקריאה והציוד הנדרש.",
+  },
+  {
+    title: "מתי צריך צילום קו ביוב?",
+    content:
+      "כאשר יש סתימות חוזרות, ריח ביוב, חשד לשורשים, שבר, שיפוע לא תקין או כאשר רוצים להבין את מצב הקו לפני תיקון.",
+  },
+  {
+    title: "האם אתם מבצעים ביובית?",
+    content:
+      "אנחנו מבצעים פתיחת סתימות, שטיפות קווים, צילום קווי ביוב וטיפול בשורשים עם ציוד מקצועי. במקרים שמצריכים ביובית גדולה או שאיבה כבדה, נעדכן מראש.",
+  },
+  {
+    title: "האם ניתן לפתור בלי לשבור?",
+    content:
+      "במקרים רבים כן. בעזרת צילום קו ואבחון מקצועי ניתן להבין האם קיימת אפשרות לפתרון ללא הרס, כמו ניקוי, שטיפה, טיפול שורשים או תיקון נקודתי.",
+  },
+  {
+    title: "באילו אזורים אתם עובדים?",
+    content:
+      "אנחנו נותנים שירות באזור השרון והמרכז, כולל הרצליה, רעננה, כפר סבא, הוד השרון, נתניה, קדימה, תל אביב והסביבה.",
+  },
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": items.map(({ title, content }) => ({
+  mainEntity: faqItems.map(({ title, content }) => ({
     "@type": "Question",
-    "name": title,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": content
-    }
-  }))
+    name: title,
+    acceptedAnswer: { "@type": "Answer", text: content },
+  })),
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ city?: string[] }> }) {
-  let { city }: any = await params
-  city = city ? decodeURIComponent(city[0]) : "באזורכם";
+const localBusinessSchema = (cityLabel?: string) => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "אקו אינסטלציה",
+  image: `${SITE}${HERO_IMAGE}`,
+  telephone: "+972526736935",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: cityLabel || "השרון והמרכז",
+    addressRegion: "מרכז",
+    addressCountry: "IL",
+  },
+  url: `${SITE}/services/jetting`,
+  areaServed: serviceAreas,
+  openingHours: "Mo-Su 00:00-24:00",
+  priceRange: "₪₪",
+});
 
-  const title = `שירותי ביובית ${city} | פתיחת סתימות בלחץ מים 24/7`;
-  const description = `ביובית מקצועית ${city} לפתיחת סתימות, טיפול בשורשים, צילום קווים ושאיבות – זמינות מיידית, ציוד מתקדם ודירוג 9.9 במדרג. Eco Plumbers כאן בשבילך.`;
+function InlineCta({ className = "" }: { className?: string }) {
+  return <CtaGroup className={`mt-10 ${className}`} />;
+}
 
-  const image = "https://www.eco-plumbers.com/images/jetter-service.png";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ city?: string[] }>;
+}) {
+  const { city: cityParam } = await params;
+  const city = cityParam
+    ? decodeURIComponent(cityParam[0])
+    : "השרון והמרכז";
+
+  const title = `פתיחת סתימות מקצועית ${city} | צילום קווי ביוב | אקו אינסטלציה`;
+  const description = `פתיחת סתימות, צילום קווי ביוב, טיפול בשורשים ופתרונות ללא הרס ב${city}. ציוד מתקדם, זמינות מהירה ומחירים שקופים. התקשרו ${PHONE_DISPLAY}.`;
+
+  const image = `${SITE}${HERO_IMAGE}`;
+  const path = cityParam
+    ? `/services/jetting/${cityParam[0]}`
+    : "/services/jetting";
 
   return {
     title,
@@ -64,41 +214,31 @@ export async function generateMetadata({ params }: { params: Promise<{ city?: st
     openGraph: {
       title,
       description,
-      url: `https://www.eco-plumbers.com/services/jetting/${city}`,
+      url: `${SITE}${path}`,
       type: "website",
-      images: [{ url: image, width: 1200, height: 630, alt: title }]
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [image]
+      images: [image],
     },
-    alternates: {
-      canonical: `https://www.eco-plumbers.com/services/jetting/${city}`
-    },
-    metadataBase: new URL("https://www.eco-plumbers.com")
+    alternates: { canonical: `${SITE}${path}` },
+    metadataBase: new URL(SITE),
   };
 }
 
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ city?: string[] }>;
+}) {
+  const { city: cityParam } = await params;
+  const cityLabel = cityParam ? decodeURIComponent(cityParam[0]) : undefined;
 
-export default async function Page({ params }: { params: Promise<{ city?: string[] }> }) {
-  const { city } = await params;
-  const cityName = city ? "ב" + decodeURIComponent(city[0]) : null;
-
-  return (<>
-    <Head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-17385017560');
-function gtag_report_conversion_whatsapp(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/_ZT_CPPR3vsaENih6eFA','event_callback':callback});return false;}
-function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)!='undefined'){window.location=url;}};gtag('event','conversion',{'send_to':'AW-17385017560/B-xnCPSPyfcaENih6eFA','event_callback':callback});return false;}`
-        }}
-      />
+  return (
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -106,140 +246,212 @@ function gtag_report_conversion_call(url){var callback=function(){if(typeof(url)
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "אקו פתרונות אינסטלציה",
-            "image": "https://www.eco-plumbers.com/images/jetter-service.png",
-            "telephone": "+972526736935",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": cityName?.replace("ב", ""),
-              "addressCountry": "IL"
-            },
-            "url": `https://www.eco-plumbers.com/services/jetting/${cityName?.replace("ב", "")}`,
-            "openingHours": "24/7"
-          })
+          __html: JSON.stringify(localBusinessSchema(cityLabel)),
         }}
       />
-    </Head>
-    <div className="relative overflow-hidden rtl">
-      <div className="absolute top-20 -left-20 w-80 h-80 bg-secondary-text rounded-full opacity-20" />
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20" />
-      <div className="absolute -inset-0 -top-10 -right-10 w-40 h-40 bg-primary-text rounded-full opacity-10" />
-      <div className="absolute bottom-10 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10" />
 
-      <div className="relative z-10 space-y-4 mt-10">
-        {/* Hero */}
-        <div className="text-center px-4 md:px-20 py-16 bg-primary text-white">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-primary-text">
-            השורשים שוב סתמו את הצינור? <span className="text-secondary-text">{cityName} – ביובית 24/7</span>
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-primary-sea">
-            שירותי ביובית מתקדמים{cityName}  – פתיחת סתימות קשות, כרסום בטון בקווים, שטיפת קווי ביוב בלחץ גבוה, שאיבת הצפות וטיפול בשורשים. אנו משתמשים בציוד מהמתקדמים בישראל וכוללים <strong>צילום קווי ביוב</strong>, <strong>איתור תקלות</strong> ו<strong>דו"ח מקצועי לביטוח</strong> לפי הצורך. <br />
-            <span className="font-bold">התחייבות לשירות מקצועי – לא פתרנו? לא שילמתם.</span><br />
-            זמינות גם בשבתות וחגים.
-          </p>
-          <ConversionLink
-            href="tel:0526736935"
-            sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
-            className={filledButton + " m-auto mt-8 block"}
-          >
-            התקשרו עכשיו!           </ConversionLink>
-          <a target="blank" href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2" className={filledButton + " m-auto mt-8 block bg-pink-600 "}>
-            ⭐ קראו את הביקורות שלנו באתר מידרג
-          </a>
-        </div>
+      <div className="relative overflow-hidden rtl pb-8 bg-background-primary-light">
+        <div className="relative z-10">
+          <JettingHero cityLabel={cityLabel} />
 
-        {/* Image Section */}
-        <div className="relative flex-wrap m-auto w-full h-fit p-6 lg:p-10 flex flex-col justify-center gap-12 items-center lg:flex-row-reverse lg:bg-white lg:rounded-2xl lg:shadow-xl lg:px-20 lg:w-10/12 max-w-[2000px]">
-          <Image
-            src="/images/jetter-service.png"
-            alt="שירות ביובית"
-            width={500}
-            height={500}
-            className="rounded-2xl shadow-2xl border-4 border-secondary-text aspect-square object-cover"
-          />
-
-          {/* Text Section */}
-          <section className="bg-gray-50 lg:bg-transparent lg:shadow-none py-16 px-6 md:px-20 text-right text-primary rounded-2xl shadow-lg lg:min-w-[900px]">
+          {/* בעיות נפוצות */}
+          <section className="px-4 md:px-12 py-14 md:py-16 bg-white">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-3xl font-bold mb-6 text-center text-secondary-text">מתי צריך להזמין ביובית?</h2>
-
-              <div className="space-y-6 text-lg leading-relaxed">
-                <p className=" text-center font-semibold">
-                  אם יש לכם סתימה או שהשורשים שוב חזרו ואי אפשר להוריד את המים ללא חרדה, זה הזמן להזמין אותנו, אנחנו נבצע צילום, פתיחת סתימה וטיפול מקיף לבעייה, כך שהיא תפסיק ויהיה לכם שקט נפשי לשנים קדימה
-                </p>
-
-                <h3 className="text-xl font-semibold mt-8">מה כוללים השירותים שלנו?</h3>
-                <ul className="list-disc pr-5 space-y-2 mt-3 text-base">
-                  <li>כרסום שורשים ותיקון למניעת חזרתם</li>
-                  <li>פתיחת סתימות בלחץ מים גבוה</li>
-                  <li>צילום קווי ביוב על ידי מצלמת 460 מעלות</li>
-                  <li>כרסום בטון בקווי ביוב</li>
-                  <li>שירות חירום 24/7</li>
-                </ul>
-              </div>
-              <ConversionLink
-                href="tel:0526736935"
-                sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
-                className={filledButton + " m-auto mt-8 block"}
-              >
-                התקשרו עכשיו!              </ConversionLink>
+              <FadeInSection>
+                <SectionHeading subtitle="במקרים רבים סתימה היא רק סימפטום. שורשים, שבר בצנרת, שיפוע לא תקין או הצטברות שומנים יכולים לגרום לסתימות חוזרות. אנחנו מאתרים את מקור הבעיה בעזרת ציוד צילום מתקדם ומציעים פתרון מקצועי במקום.">
+                  סתימה חוזרת? ביוב שעולה? ריח רע מהצנרת?
+                </SectionHeading>
+              </FadeInSection>
+              <ProblemCards items={problems} />
+              <InlineCta />
             </div>
+          </section>
+
+          {/* חבילות שירות */}
+          <section
+            dir="rtl"
+            className="px-4 md:px-12 py-14 md:py-20 overflow-hidden text-right"
+          >
+            <div className="max-w-[1400px] mx-auto">
+              <FadeInSection>
+                <SectionHeading subtitle="מחירים שקופים לפי סוג התקלה, מורכבות העבודה והציוד הנדרש.">
+                  חבילות שירות נפוצות
+                </SectionHeading>
+              </FadeInSection>
+              <PackageOffers packages={packages} />
+              <FadeInSection>
+                <p className="text-sm text-gray-500 text-center mt-6 max-w-3xl mx-auto leading-relaxed px-4">
+                  המחירים משתנים לפי גישה, אורך הקו, חומרת הסתימה, שעת הקריאה
+                  והאם נדרש פירוק כלים סניטריים או ציוד נוסף. מחיר סופי יימסר
+                  לאחר שיחה קצרה או בדיקה במקום.
+                </p>
+                <InlineCta />
+              </FadeInSection>
+            </div>
+          </section>
+
+          {/* למה לבחור בנו */}
+          <section
+            dir="rtl"
+            className="px-4 md:px-12 py-14 md:py-16 bg-white text-right"
+          >
+            <div className="max-w-3xl mx-auto">
+              <FadeInSection>
+                <SectionHeading>למה לבחור ב־אקו אינסטלציה?</SectionHeading>
+              </FadeInSection>
+              <ul className="space-y-3">
+                {whyUs.map((point, i) => (
+                  <FadeInSection key={point} delay={0.3 + i * 0.3}>
+                    <li className="flex flex-row items-start gap-3 bg-background-primary-light rounded-xl p-4 border border-transparent hover:border-primary-sea/15 hover:shadow-sm">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary-text/20 text-primary-sea mt-0.5">
+                        <IconCheck className="w-5 h-5 text-primary-sea" />
+                      </span>
+                      <span className="flex-1 text-gray-700 font-medium leading-relaxed text-right">
+                        {point}
+                      </span>
+                    </li>
+                  </FadeInSection>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* תהליך */}
+          <section className="px-4 md:px-12 py-14 md:py-16">
+            <div className="max-w-3xl mx-auto">
+              <FadeInSection>
+                <SectionHeading>איך זה עובד?</SectionHeading>
+              </FadeInSection>
+              <ol className="relative space-y-0">
+                <span className="absolute top-8 bottom-8 right-[1.65rem] w-0.5 bg-primary-sea/15 hidden sm:block" aria-hidden />
+                {processSteps.map((step, i) => (
+                  <FadeInSection key={step} delay={0.3 + i * 0.3}>
+                    <li className="relative flex flex-row-reverse gap-4 items-center py-3">
+                      <span className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-sea text-white font-bold text-lg shadow-md">
+                        {i + 1}
+                      </span>
+                      <span className="flex-1 text-right bg-white rounded-xl px-5 py-4 shadow-sm border border-primary-sea/5 text-gray-800 font-medium hover:shadow-md hover:border-primary-sea/15 transition-all">
+                        {step}
+                      </span>
+                    </li>
+                  </FadeInSection>
+                ))}
+              </ol>
+              <InlineCta />
+            </div>
+          </section>
+
+          {/* גלריה + וידאו */}
+          <section className="px-4 md:px-12 py-14 md:py-16 bg-white">
+            <div className="max-w-5xl mx-auto">
+              <FadeInSection>
+                <SectionHeading subtitle="אנחנו משתמשים בציוד צילום כדי להבין מה באמת קורה בתוך הצנרת — ולא רק לנחש.">
+                  כך נראית עבודה מקצועית מבפנים
+                </SectionHeading>
+              </FadeInSection>
+
+              <FadeInSection delay={0.3}>
+                <div className="aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl mb-10 ring-2 ring-primary-sea/15">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/JYfWcU1xvoQ"
+                    title="צילום קו ביוב — עבודה מקצועית"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </FadeInSection>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                {galleryItems.map((item, i) => (
+                  <FadeInSection key={item.src} delay={0.3 + i * 0.3}>
+                    <figure className="relative aspect-square rounded-xl overflow-hidden shadow-md group">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                      <figcaption className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary-sea to-transparent text-white text-xs md:text-sm text-center py-3 px-2 font-medium">
+                        {item.label}
+                      </figcaption>
+                    </figure>
+                  </FadeInSection>
+                ))}
+              </div>
+              <InlineCta />
+            </div>
+          </section>
+
+          {/* אזורי שירות */}
+          <section className="px-4 md:px-12 py-14 md:py-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <FadeInSection>
+                <SectionHeading subtitle="שירות באזור השרון והמרכז, כולל:">
+                  אזורי שירות
+                </SectionHeading>
+                <div className="flex flex-wrap justify-center gap-2.5">
+                  {serviceAreas.map((area) => (
+                    <span
+                      key={area}
+                      className="bg-white text-primary-sea px-4 py-2 rounded-full text-sm font-medium border border-primary-sea/15 shadow-sm hover:bg-primary-sea hover:text-white transition-colors cursor-default"
+                    >
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </FadeInSection>
+            </div>
+          </section>
+
+          {/* ביקורות */}
+          <section className="px-4 md:px-12 py-14 bg-white">
+            <div className="max-w-4xl mx-auto">
+              <FadeInSection>
+                <ReviewsSlider title="לקוחות ממליצים" />
+                <div className="text-center mt-4">
+                  <a
+                    href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary-sea font-semibold hover:text-secondary-text transition-colors"
+                  >
+                    <IconStar className="w-5 h-5 text-secondary-text" />
+                    צפו בביקורות נוספות במדרג
+                  </a>
+                </div>
+              </FadeInSection>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="px-4 md:px-12 py-10">
+            <TogglesGenerator questions={faqItems} />
+            <div className="max-w-3xl mx-auto">
+              <InlineCta />
+            </div>
+          </section>
+
+          {/* CTA סופי */}
+          <section className="px-4 md:px-16 py-16 md:py-20 bg-gradient-to-br from-primary-sea via-[#0a5561] to-[#084550] text-white text-center">
+            <FadeInSection>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4">
+                יש סתימה או בעיה חוזרת בצנרת?
+              </h2>
+              <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/90">
+                דברו איתנו עכשיו ונבין יחד מה הפתרון הנכון — פתיחה, צילום,
+                שטיפה או טיפול מתקדם יותר.
+              </p>
+              <CtaGroup />
+              <p className="mt-6 text-white/60 text-sm">
+                זמינים לשיחה ב־{PHONE_DISPLAY}
+              </p>
+            </FadeInSection>
           </section>
         </div>
 
-        {/* Why Us */}
-        <div className="text-center px-6 md:px-20 py-10 relative">
-          <div className="absolute top-10 -left-20 w-60 h-60 bg-secondary-text rounded-full opacity-20" />
-          <div className="absolute -bottom-10 -right-20 w-40 h-40 bg-primary-text rounded-full opacity-20" />
-
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">למה לבחור בנו?</h2>
-          <ul className="max-w-3xl mx-auto space-y-3 text-right text-lg">
-            <li>✅ ביובית מתקדמת לפתיחת סתימות מורכבות</li>
-            <li>✅ זמינות 24/7 כולל שבתות</li>
-            <li>✅ צוות מנוסה ופתרון יסודי</li>
-            <li>✅ צילום ואבחון מדויק לפני טיפול</li>
-            <li>✅ שירות אמין עם אחריות מלאה</li>
-          </ul>
-        </div>
-
-        {/* FAQ Accordion */}
-        <TogglesGenerator questions={items} />
-        <ConversionLink
-          href="tel:0526736935"
-          sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
-          className={filledButton + " m-auto mt-8 block"}
-        >
-          התקשרו עכשיו!        </ConversionLink>
-
-        {/* Testimonial */}
-        <div className="bg-gray-50 py-12 px-6 md:px-20 text-center flex flex-col gap-6 justify-center items-center">
-          <ReviewsSlider />
-        </div>
-
-        {/* CTA */}
-        <div className="text-center py-12 bg-secondary text-white px-6">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary-text">
-            צריך שירות ביובית דחוף? <span className="text-secondary-text">אנחנו בדרך</span>
-          </h3>
-          <p className="mb-6 text-lg text-primary-text">
-            השאר פרטים ונחזור תוך דקות – או התקשר עכשיו ואנחנו מגיעים עם ביובית מקצועית וציוד מתקדם
-          </p>
-          <ConversionLink
-            href="tel:0526736935"
-            sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
-            className={filledButton + " m-auto mt-8 block"}
-          >
-            התקשרו עכשיו!          </ConversionLink>
-
-        </div>
-
-        <ContactSection />
       </div>
-    </div>
-  </>
+    </>
   );
 }
-

@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const imageCount = 4;
 const imageBaseUrl = "/reviews"; // התמונות ב־public/reviews
 
-const ReviewsSlider = () => {
+type Props = { title?: string };
+
+const ReviewsSlider = ({ title = "לקוחות מדרג ממליצים" }: Props) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const ReviewsSlider = () => {
 
   return (
     <div className="max-w-3xl mx-auto py-12 px-4 w-full">
-      <h2 className="text-3xl font-bold text-pink-600 m-auto text-center mb-8">לקוחות מדרג ממליצים</h2>
+      <h2 className="text-3xl font-bold text-primary-sea m-auto text-center mb-8">{title}</h2>
 
       <div
         className="relative overflow-hidden rounded-lg shadow-lg bg-white"
@@ -74,7 +76,7 @@ const ReviewsSlider = () => {
         </button>
         <button
           onClick={next}
-          className="px-4 py-2 rounded-md bg-yellow-500 text-white hover:bg-yellow-600"
+          className="px-4 py-2 rounded-md bg-primary-sea text-white hover:bg-primary-text"
         >
           הבא
         </button>
@@ -85,7 +87,7 @@ const ReviewsSlider = () => {
         {[...Array(imageCount)].map((_, i) => (
           <div
             key={i}
-            className={`w-3 h-3 rounded-full ${i === current ? "bg-yellow-500" : "bg-gray-300"
+            className={`w-3 h-3 rounded-full ${i === current ? "bg-secondary-text" : "bg-gray-300"
               }`}
           />
         ))}

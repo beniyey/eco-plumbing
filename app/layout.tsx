@@ -69,51 +69,35 @@ export default function RootLayout({
   return (
     <html lang="he" className={"bg-background-primary-light"}>
       <head>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "אקו פתרונות אינסטלציה",
-            "url": "https://www.eco-plumbers.com",
-            "logo": "https://www.eco-plumbers.com/favicon.ico",
-            "description": "חברת אינסטלציה מתקדמת המספקת שירותים כגון פתיחת סתימות, איתור נזילות, תיקוני צנרת ושיקום ללא הרס, עם שירות מקצועי וזמינות 24/7.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressRegion": "מרכז",
-              "addressCountry": "IL"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+972-526-736935",
-              "contactType": "customer service",
-              "areaServed": "IL",
-              "availableLanguage": ["Hebrew", "Russian", "English"]
-            }
-          })}
-        </script>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560"
-          strategy="afterInteractive"
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "אקו פתרונות אינסטלציה",
+              url: "https://www.eco-plumbers.com",
+              logo: "https://www.eco-plumbers.com/favicon.ico",
+              description:
+                "חברת אינסטלציה מתקדמת המספקת שירותים כגון פתיחת סתימות, איתור נזילות, תיקוני צנרת ושיקום ללא הרס, עם שירות מקצועי וזמינות 24/7.",
+              address: {
+                "@type": "PostalAddress",
+                addressRegion: "מרכז",
+                addressCountry: "IL",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+972-526-736935",
+                contactType: "customer service",
+                areaServed: "IL",
+                availableLanguage: ["Hebrew", "Russian", "English"],
+              },
+            }),
+          }}
         />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-17385017560');
-        `}
-        </Script>
       </head>
       <body className="relative">
         <Header />
-        <ConversionLink
-          href="tel:0526736935"
-          sendTo="AW-17385017560/pZqJCLDbyfcaENih6eFA"
-          className={filledButton + " fixed bottom-8 left-8 text-[#ffffffb3] hover:text-secondary-text w-fit flex flex-row-reverse gap-2 z-50 hover:scale-105"}
-        >
-          התקשרו
-        </ConversionLink>
-
         <Suspense fallback={<p>loading...</p>}>
           {children}
         </Suspense>
