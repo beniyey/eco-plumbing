@@ -32,9 +32,8 @@ function Card({
 
 export default function Stats() {
     return (
-        <div className='bg-primary-sea p-20 flex flex-col justify-between items-center gap-20 box-border relative z-50
-                        md:flex-row md:justify-center md: gap-10'>
-            <span className=" absolute border-[50px] border-gray w-96 h-96 block rounded-full top-2/3 md:top-96 -right-1/2 -z-10 opacity-30" />
+        <div className='bg-primary-sea px-6 py-16 md:py-20 flex flex-col justify-between items-center gap-12 md:gap-16 box-border
+                        md:flex-row md:justify-center md:max-w-6xl md:mx-auto' dir="rtl">
             <Card
                 imgSrc='/icons/google.svg'
                 alt='a logo of google'

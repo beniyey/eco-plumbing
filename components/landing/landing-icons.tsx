@@ -116,6 +116,10 @@ export const problemIconMap = {
   droplets: IconDroplets,
   slow: IconDroplets,
   alert: IconAlert,
+  wrench: IconWrench,
+  zap: IconZap,
+  shield: IconShield,
+  camera: IconCamera,
 } as const;
 
 export const trustIconMap = {

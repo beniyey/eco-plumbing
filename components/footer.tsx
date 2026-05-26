@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/15 mt-8 pt-6 flex flex-col sm:flex-row-reverse justify-between items-center gap-3 text-white/50 text-xs">
-          <p>© {new Date().getFullYear()} אקו פתרונות אינסטלציה — כל הזכויות שמורות</p>
+          <p>© {new Date().getFullYear()} אקו אינסטלציה — כל הזכויות שמורות</p>
           <a
             href="https://www.midrag.co.il/SpCard/Sp/128232?sectorId=4&listId=2"
             target="_blank"

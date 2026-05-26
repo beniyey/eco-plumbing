@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" className={"bg-background-primary-light"}>
+    <html lang="he" dir="rtl" className={"bg-background-primary-light"}>
       <head>
         <script
           type="application/ld+json"
@@ -75,7 +75,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "אקו פתרונות אינסטלציה",
+              name: "אקו אינסטלציה",
               url: "https://www.eco-plumbers.com",
               logo: "https://www.eco-plumbers.com/favicon.ico",
               description:

@@ -1,26 +1,28 @@
-import ContactSection from '@/sections/contact-section'
-import React from 'react'
-import Head from 'next/head'
+import LandingHero from "@/components/landing/landing-hero";
+import ContactSection from "@/sections/contact-section";
+import FadeInSection from "@/components/landing/fade-in-section";
 
-type Props = {}
+export const metadata = {
+  title: "צור קשר | אקו אינסטלציה",
+  description: "צרו קשר עם אקו אינסטלציה — שירותי אינסטלציה מקצועיים באזור השרון והמרכז.",
+};
 
-export default function page({ }: Props) {
-    return (
-        <>
-            <Head>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385017560" />
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-17385017560');`
-                    }}
-                />
-            </Head>
-            <div>
-                <ContactSection />
-            </div>
-        </>
-    )
+export default function ContactPage() {
+  return (
+    <div className="rtl bg-background-primary-light pb-8">
+      <LandingHero
+        image="/images/modern-sink.webp"
+        imageAlt="צור קשר — אקו אינסטלציה"
+        title="רוצים לדבר איתנו?"
+        titleHighlight="אנחנו כאן"
+        subtitle="השאירו פרטים או התקשרו ישירות — נחזור אליכם בהקדם עם הצעה וייעוץ מקצועי."
+        showTrustTags={false}
+      />
+      <section className="px-4 md:px-12 py-10 max-w-3xl mx-auto">
+        <FadeInSection>
+          <ContactSection />
+        </FadeInSection>
+      </section>
+    </div>
+  );
 }

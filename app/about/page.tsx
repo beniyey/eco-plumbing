@@ -1,71 +1,65 @@
-import ContactSection from "@/sections/contact-section";
-import Hero from "@/sections/about/hero";
+import LandingHero from "@/components/landing/landing-hero";
+import FadeInSection from "@/components/landing/fade-in-section";
+import SectionHeading from "@/components/landing/section-heading";
 import Stats from "@/sections/about/stats";
 import OurWork from "@/sections/ourWork";
-import Reviews from "@/sections/reviews";
+import ReviewsSlider from "@/sections/reviews";
+import ContactSection from "@/sections/contact-section";
 import Image from "next/image";
+import Link from "next/link";
+import { filledButton } from "@/components/buttons";
 
 export const metadata = {
-    title: "אודות -אקו פתרונות אינסטלציה",
-    description: "מחפשים אינסטלטור מקצועי ואמין? אנו מספקים שירותי אינסטלציה איכותיים, תיקון נזילות, פתיחת סתימות והתקנת דודי שמש. זמינות 24/7!",
-    keywords: [
-        "אינסטלטור מומלץ",
-        "שירותי אינסטלציה",
-        "אינסטלטור 24/7",
-        "אינסטלטור מקצועי",
-        "אינסטלטור עם המלצות",
-        "תיקון בעיות אינסטלציה",
-        "מחירים הוגנים לאינסטלציה",
-        "זמינות מיידית לתיקוני אינסטלציה"
-    ],
-    openGraph: {
-        title: "אודות -אקו פתרונות אינסטלציה",
-        description: "שירותי אינסטלציה מקצועיים. אנו מתמחים בתיקון נזילות, פתיחת סתימות, החלפת צנרת ושירותי אינסטלציה נוספים. צרו קשר עכשיו!",
-        url: "https://yourwebsite.co.il/about",
-        type: "website",
-        images: [
-            {
-                url: "https://youtube.com/shorts/JYfWcU1xvoQ?feature=shared",
-                width: 1200,
-                height: 630,
-                alt: "אינסטלטור בעבודה",
-            }
-        ],
-    },
+  title: "אודות | אקו אינסטלציה",
+  description:
+    "אקו אינסטלציה — צוות מומחים באינסטלציה עם ציוד מתקדם, שירות מקצועי וזמינות באזור השרון והמרכז.",
 };
 
-
 export default function About() {
-    return (
-        <>
-            <div className="m-auto flex flex-col gap-8 bg-white">
-                {/* Hero Section */}
-                <section className="relative h-[30vh] lg:h-[30vh]">
-                    {/* Overlay with a gradient for better text contrast */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-transparent opacity-60"></div>
-                    <Image
-                        src="/images/modern-sink.webp"
-                        alt="an image of a modern sink"
-                        className="object-cover opacity-35"
-                        fill={true}
-                    />
-                    <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-10 flex items-center justify-center h-fit">
-                        <h1 className="text-white text-5xl lg:text-7xl font-extrabold tracking-wider">
-                            עלינו
-                        </h1>
-                    </div>
-                </section>
+  return (
+    <div className="rtl bg-background-primary-light pb-8">
+      <LandingHero
+        image="/images/plumber-working.jpg"
+        imageAlt="אקו אינסטלציה — אודות"
+        title="מי אנחנו?"
+        titleHighlight="אקו אינסטלציה"
+        subtitle="צוות מומחים באינסטלציה עם ניסיון בשטח, ציוד מתקדם וגישה שמחפשת פתרון יסודי — לא רק תיקון זמני."
+        showTrustTags={false}
+      />
 
-                <Hero />
-                <Stats />
-                <OurWork />
-                <div className="bg-background-primary-light">
-                    <Reviews />
-                </div>
+      <section className="bg-white px-4 md:px-12 py-14" dir="rtl">
+        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-center">
+          <div className="relative w-full lg:w-1/2 aspect-[4/3] max-w-lg mx-auto rounded-2xl overflow-hidden shadow-lg">
+            <Image src="/images/sink-repair.webp" alt="עבודת אינסטלציה" fill className="object-cover" />
+          </div>
+          <div className="lg:w-1/2 text-right space-y-4">
+            <SectionHeading subtitle="אנחנו מתמחים בפתיחת סתימות, איתור נזילות, צילום קווי ביוב ותיקוני צנרת.">
+              עמידה בזמנים ומקצועיות מעל הכל
+            </SectionHeading>
+            <p className="text-gray-600 leading-relaxed">
+              החזון שלנו הוא להעניק שירות אמין, מהיר ואיכותי — עם דגש על אבחון מדויק, שקיפות במחירים ושביעות רצון הלקוח.
+            </p>
+            <Link href="/contact" className={filledButton}>
+              להזמנת אינסטלטור
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                <ContactSection />
+      <Stats />
+      <OurWork />
 
-            </div>
-        </>
-    );
+      <section className="px-4 md:px-12 py-14 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <FadeInSection>
+            <ReviewsSlider title="לקוחות ממליצים" />
+          </FadeInSection>
+        </div>
+      </section>
+
+      <section className="px-4 md:px-12 max-w-3xl mx-auto pb-10">
+        <ContactSection />
+      </section>
+    </div>
+  );
 }

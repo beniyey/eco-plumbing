@@ -71,20 +71,14 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="w-full bg-white py-20 px-6 relative overflow-hidden">
-      {/* Background circles with refined placement and matching colors */}
-      <div className="absolute -top-20 -left-20 w-40 h-40 bg-secondary-text rounded-full opacity-20"></div>
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-secondary-text rounded-full opacity-20"></div>
-      <div className="absolute top-10 right-10 w-16 h-16 bg-secondary-text rounded-full opacity-10"></div>
-      <div className="absolute bottom-10 left-10 w-16 h-16 bg-secondary-text rounded-full opacity-10"></div>
-
+    <section className="w-full py-8 px-4" dir="rtl">
       <form
         onSubmit={handleForm}
-        className="relative md:w-3/4 rtl m-auto flex flex-col justify-between items-center gap-6 p-14 rounded-2xl bg-background-primary-light container"
+        className="m-auto flex flex-col items-center gap-5 p-8 md:p-10 rounded-2xl bg-white border border-primary-sea/10 shadow-sm max-w-2xl w-full"
       >
-        <h1 className="text-4xl py-4 font-bold text-center">
-          צור קשר עם <span className="text-secondary-text">הצוות שלנו</span>
-        </h1>
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-primary-text">
+          שלחו הודעה — <span className="text-primary-sea">נחזור אליכם</span>
+        </h2>
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 p-3 rounded w-full max-w-3xl text-center">
             {error}
