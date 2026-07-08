@@ -1,5 +1,4 @@
 import TogglesGenerator from "@/components/toggles-generator";
-import JettingHero from "@/components/landing/jetting-hero";
 import CtaGroup from "@/components/landing/cta-group";
 import FadeInSection from "@/components/landing/fade-in-section";
 import PackageOffers from "@/components/landing/package-offers";
@@ -252,7 +251,6 @@ export default async function Page({
 
       <div className="relative overflow-hidden rtl pb-8 bg-background-primary-light">
         <div className="relative z-10">
-          <JettingHero cityLabel={cityLabel} />
 
           {/* בעיות נפוצות */}
           <section className="px-4 md:px-12 py-14 md:py-16 bg-white">
